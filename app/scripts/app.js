@@ -2,7 +2,7 @@
  * @ngdoc overview
  * @name robottiFrontApp
  * @description
- * # robottiFrontApp
+ * # robottiFrontApp, bootstraps the application
  *
  * Main module of the application.
  */
