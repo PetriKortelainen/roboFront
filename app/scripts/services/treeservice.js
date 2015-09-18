@@ -5,19 +5,19 @@
 		.module('robottiFrontApp')
 		.factory('treeService', treeService);
 
-    treeService.$inject = ['$http', 'Question', '$q'];
+    treeService.$inject = ['$http', '$q'];
 
 	/* @ngInject */
-	function treeService($http, Tree, $q) {
+	function treeService($http, $q) {
 
         var service = {
-            getTrees : getTrees
+            getTree : getTree
         };
 
 		return service;
 
-		function getTrees(treeId){
-			var url = 'url/'+treeId;
+		function getTree(){
+			var url = '/scripts/testdata/tree.json';
 
 			return $http.get(url).then(function(response) {
 					if(typeof response.data === 'object') {
@@ -26,6 +26,7 @@
 						return $q.reject(response.data);
 					}
 				}, function(response) {
+					//this is failsafe rejection
 					return $q.reject(response.data);
 				}
 			);

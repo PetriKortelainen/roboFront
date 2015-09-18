@@ -1,0 +1,44 @@
+{
+    "question":{
+        "level":0,
+        "questionId":1,
+        "questionText":"Miksi?",
+        "type":"choise",
+        "answers":[
+            {
+                "text":"Siks",
+                "question": {
+                    "questionId":2,
+                    "level":1,
+                    "questionText":"Ikä",
+                    "type":"number",
+                    "answers":[
+                        {
+                            "text":"11-20"
+                        },
+                        {
+                            "text":"21-30"
+                        }
+                    ]
+                }
+            },
+            {
+                "text":"Läpäl",
+                "question": {
+                    "questionId":2,
+                    "level":1,
+                    "questionText":"Ikä",
+                    "type":"number",
+                    "answers":[
+                        {
+                            "text":"11-20"
+                        },
+                        {
+                            "text":"21-30"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

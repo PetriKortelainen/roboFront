@@ -14,13 +14,19 @@
 		.module('robottiFrontApp')
 		.controller('RobotController', RobotController);
 
-	RobotController.$inject = ['$scope','Question'];
+	RobotController.$inject = ['$scope', 'treeService'];
 
 	/* @ngInject */
-	function RobotController($scope, Question) {
+	function RobotController($scope, treeService) {
 
         $scope.init = function(){
-
+			treeService.getTree().then(
+				function (data) {
+					if(data){
+						$scope.tree = data;
+					}
+				}
+			);
         };
         $scope.init();
 	}

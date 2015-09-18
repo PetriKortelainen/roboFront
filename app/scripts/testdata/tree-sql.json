@@ -1,0 +1,66 @@
+{
+    "q_1":{
+        "parent":null,
+        "text":"tekstiä",
+        "type":"choice",
+        "answers":[
+            {
+                "id":"v_1",
+                "text":"plaa",
+                "leadsTo":"q_2"
+            },
+            {
+                "id":"v_2",
+                "text":"plaa",
+                "leadsTo":"q_3"
+            }
+        ]
+    },
+    "q_2":{
+        "parent":"k_1",
+        "text":"tekstiä",
+        "type":"scale",
+        "answers":[
+            {
+                "id":"v_3",
+                "value":1,
+                "leadsTo":"q_4"
+            },
+            {
+                "id":"v_4",
+                "value":2,
+                "leadsTo":"q_4"
+            },
+            {
+                "id":"v_5",
+                "value":3,
+                "leadsTo":"q_5"
+            }
+        ]
+    },
+    "q_3":{
+        "parent":"k_2",
+        "text":"tekstiä",
+        "type":"slider",
+        "answers":[
+            {
+                "id":"v_6",
+                "from":0,
+                "to": 100,
+                "leadsTo":"q_4"
+            },
+            {
+                "id":"v_7",
+                "from":101,
+                "to": 500,
+                "leadsTo":"q_4"
+            },
+            {
+                "id":"v_8",
+                "from":501,
+                "to": 1000,
+                "leadsTo":"q_5"
+            }
+        ]
+    }
+}
