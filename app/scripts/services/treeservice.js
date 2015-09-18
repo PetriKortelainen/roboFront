@@ -5,10 +5,10 @@
 		.module('robottiFrontApp')
 		.factory('treeService', treeService);
 
-    treeService.$inject = ['$http', '$q'];
+    treeService.$inject = ['$http', '$q', 'Tree'];
 
 	/* @ngInject */
-	function treeService($http, $q) {
+	function treeService($http, $q, Tree) {
 
         var service = {
             getTree : getTree
@@ -21,7 +21,7 @@
 
 			return $http.get(url).then(function(response) {
 					if(typeof response.data === 'object') {
-						return response.data;
+						return new Tree(response.data);
 					} else {
 						return $q.reject(response.data);
 					}

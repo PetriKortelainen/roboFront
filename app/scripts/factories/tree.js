@@ -11,20 +11,17 @@
 	function Tree(Question) {
 		var Tree = function (data) {
 			angular.extend(this, {
-                id : 0,
-                allQuestions: null
+                treeId : 0,
+                question: null
 
 			});
 			angular.extend(this, data);
-
-            if(data.allQuestions) {
-                var questions = [];
-                angular.forEach(data.allTrees, function (value) {
-                    var question = new Question(value);
-                    questions.push(question);
-                });
-                this.allQuestions = questions;
-            }
+			
+			if(data){
+				if(data.question){
+					this.question = new Question(data.question);
+				}
+			}
 		};
 
 		return Tree;

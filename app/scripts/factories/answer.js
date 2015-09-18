@@ -5,15 +5,12 @@
 		.module('robottiFrontApp')
 		.factory('Answer', Answer);
 
-
 	/* @ngInject */
 	function Answer() {
 		var Answer = function (data) {
 
 			angular.extend(this, {
-				questionId: 0,
-				questionText: '',
-				type:'',
+                text:'',
 				question: null,
 				toJson: toJson
 
