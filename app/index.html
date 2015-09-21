@@ -12,19 +12,25 @@
   <body>
 
     <div ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
-        <p>Test</p>
+        <robo-tree tree="tree"></robo-tree>
     </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
+
+    <!-- TODO BOOTSTRAP THESE-->
     <script src="scripts/app.js"></script>
+    <script src="scripts/main.js"></script>
+
     <script src="scripts/factories/question.js"></script>
     <script src="scripts/factories/answer.js"></script>
     <script src="scripts/factories/tree.js"></script>
+
     <script src="scripts/services/treeservice.js"></script>
-    <script src="scripts/main.js"></script>
+
+    <script src="scripts/directives/robo-tree.js"></script>
 
     <script>
         angular.element(document).ready(function () {
