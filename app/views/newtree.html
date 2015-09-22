@@ -1,0 +1,10 @@
+<p>This is newtree.html</p>
+<div>
+  <ul>
+    <li ng-repeat="tree in trees"> {{ tree.content }}</li>
+  </ul>
+  <form ng-submit="addTree()">
+    <input class="textbox" type="textarea" ng-model="tree">
+    <input type="submit" value="Add Tree">
+  </form>
+</div>
