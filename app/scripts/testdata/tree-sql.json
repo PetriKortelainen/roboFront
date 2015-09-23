@@ -1,66 +1,200 @@
 {
-    "q_1":{
-        "parent":null,
-        "text":"tekstiä",
-        "type":"choice",
-        "answers":[
-            {
-                "id":"v_1",
-                "text":"plaa",
-                "leadsTo":"q_2"
-            },
-            {
-                "id":"v_2",
-                "text":"plaa",
-                "leadsTo":"q_3"
-            }
-        ]
-    },
-    "q_2":{
-        "parent":"k_1",
-        "text":"tekstiä",
-        "type":"scale",
-        "answers":[
-            {
-                "id":"v_3",
-                "value":1,
-                "leadsTo":"q_4"
-            },
-            {
-                "id":"v_4",
-                "value":2,
-                "leadsTo":"q_4"
-            },
-            {
-                "id":"v_5",
-                "value":3,
-                "leadsTo":"q_5"
-            }
-        ]
-    },
-    "q_3":{
-        "parent":"k_2",
-        "text":"tekstiä",
-        "type":"slider",
-        "answers":[
-            {
-                "id":"v_6",
-                "from":0,
-                "to": 100,
-                "leadsTo":"q_4"
-            },
-            {
-                "id":"v_7",
-                "from":101,
-                "to": 500,
-                "leadsTo":"q_4"
-            },
-            {
-                "id":"v_8",
-                "from":501,
-                "to": 1000,
-                "leadsTo":"q_5"
-            }
-        ]
-    }
+  "Q1":{
+    "text":"Hei, olen robotti, haluatko tiet\u00e4\u00e4 h\u00e4rp\u00e4kkeest\u00e4?",
+    "enabled":true,
+    "answer_type":"radio"},
+  "Q2":{
+    "text":"Mill\u00e4 alalla olet?",
+    "enabled":true,
+    "answer_type":"radio"},
+  "Q3.1":{
+    "text":"Taharokkoha ti\u00e4t\u00f6\u00f6",
+    "enabled":true,
+    "answer_type":"checkbox"},
+  "Q3.2":{
+    "text":"Kiinnostaako sinua",
+    "enabled":true,
+    "answer_type":"checkbox"},
+  "Q3.3":{
+    "text":"Kiinnostaako sinua",
+    "enabled":true,
+    "answer_type":"checkbox"},
+  "Q3.4":{
+    "text":"Kiinnostaako sinua",
+    "enabled":true,"answer_type":"checkbox"},
+  "Q3.5":{"text":"Kiinnostaako sinua",
+    "enabled":true,
+    "answer_type":"checkbox"},
+  "Q3.6":{
+    "text":"Kiinnostaako sinua",
+    "enabled":true,
+    "answer_type":"checkbox"},
+  "Q4":{
+    "text":"Hei t\u00e4\u00e4 meid\u00e4n h\u00e4rp\u00e4ke osaa t\u00e4n kaiken, pistet\u00e4\u00e4nk\u00f6 tulemaan?",
+    "enabled":true,
+    "answer_type":"radio"},
+  "Q5.1":{
+    "text":"[insert redirect code here]",
+    "enabled":true,
+    "answer_type":"redirect"},
+  "Q5.2":{
+    "text":"Annappas puhelinnumero tai s\u00e4hk\u00f6posti mihin myyntitykki voi pl\u00e4j\u00e4ytt\u00e4\u00e4 lis\u00e4tietoja",
+    "enabled":true,
+    "answer_type":"form"},
+
+  "A1.1":{
+    "id_Question":"Q1",
+	"text":"Kyll\u00e4, kerro lis\u00e4\u00e4",
+	"order_index":true,"id_next_question":"Q2",
+	"enabled":1,"sets_user_type":false},
+  "A1.2":{
+    "id_Question":"Q1",
+	"text":"En, lopeta h\u00e4iritseminen",
+	"order_index":true,"id_next_question":"",
+	"enabled":1,"sets_user_type":false},
+  "A2.1":{
+    "id_Question":"Q2",
+	"text":"Maanviljelys",
+	"order_index":true,"id_next_question":"Q3.1",
+	"enabled":1,"sets_user_type":true},
+  "A2.2":{
+    "id_Question":"Q2",
+	"text":"Terveysala",
+	"order_index":true,"id_next_question":"Q3.2",
+	"enabled":1,"sets_user_type":true},
+  "A2.3":{
+    "id_Question":"Q2",
+	"text":"Kuljetusala",
+	"order_index":true,"id_next_question":"Q3.3",
+	"enabled":1,"sets_user_type":true},
+  "A2.4":{
+    "id_Question":"Q2",
+	"text":"Tietotekniikka",
+	"order_index":true,"id_next_question":"Q3.4",
+	"enabled":1,"sets_user_type":true},
+  "A2.5":{
+    "id_Question":"Q2",
+	"text":"Muu",
+	"order_index":true,"id_next_question":"Q3.5",
+	"enabled":1,"sets_user_type":true},
+  "A3.1.1":{
+    "id_Question":"Q3.1",
+	"text":"Peltoalan l\u00e4mp\u00f6tilat",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.1.2":{
+    "id_Question":"Q3.1",
+	"text":"Viljasiilon kosteudet",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.1.3":{
+    "id_Question":"Q3.1",
+	"text":"Kuljetusten etenemiset",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.1.4":{
+    "id_Question":"Q3.1",
+	"text":"Traktorin kiihtyvyydet Vimpelin Tractor Pull:ssa",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.2.1":{
+    "id_Question":"Q3.2",
+	"text":"L\u00e4mp\u00f6tilamonitori",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.2.2":{
+    "id_Question":"Q3.2",
+	"text":"Kosteusmittari",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.2.3":{
+    "id_Question":"Q3.2",
+	"text":"GPS-paikannus",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.2.4":{
+    "id_Question":"Q3.2",
+	"text":"Kiihtyvyysanturointi",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.3.1":{
+    "id_Question":"Q3.3",
+	"text":"L\u00e4mp\u00f6tilamonitori",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.3.2":{
+    "id_Question":"Q3.3",
+	"text":"Kosteusmittari",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.3.3":{
+    "id_Question":"Q3.3",
+	"text":"GPS-paikannus",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.3.4":{
+    "id_Question":"Q3.3",
+	"text":"Kiihtyvyysanturointi",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.4.1":{
+    "id_Question":"Q3.4",
+	"text":"L\u00e4mp\u00f6tilamonitori",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.4.2":{
+    "id_Question":"Q3.4",
+	"text":"Kosteusmittari",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.4.3":{
+    "id_Question":"Q3.4",
+	"text":"GPS-paikannus",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.4.4":{
+    "id_Question":"Q3.4",
+	"text":"Kiihtyvyysanturointi",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.5.1":{
+    "id_Question":"Q3.5",
+	"text":"L\u00e4mp\u00f6tilamonitori",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.5.2":{
+    "id_Question":"Q3.5",
+	"text":"Kosteusmittari",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.5.3":{
+    "id_Question":"Q3.5",
+	"text":"GPS-paikannus",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A3.5.4":{
+    "id_Question":"Q3.5",
+	"text":"Kiihtyvyysanturointi",
+	"order_index":true,"id_next_question":"Q4",
+	"enabled":1,"sets_user_type":false},
+  "A4.1":{
+    "id_Question":"Q4",
+	"text":"Joo toki, menn\u00e4\u00e4n kauppaan",
+	"order_index":true,"id_next_question":"Q5.1",
+	"enabled":1,"sets_user_type":false},
+  "A4.2":{
+    "id_Question":"Q4",
+	"text":"Joo, mut voitteko kertoa lis\u00e4\u00e4 ihan henk koht",
+	"order_index":true,"id_next_question":"Q5.2",
+	"enabled":1,"sets_user_type":false},
+  "A4.3":{
+    "id_Question":"Q4",
+	"text":"Ei nappaa",
+	"order_index":true,"id_next_question":"",
+	"enabled":1,"sets_user_type":false},
+  "A5.2.1":{
+    "id_Question":"Q5.2",
+	"text":"[puhnro tai sposti formi]",
+	"order_index":true,"id_next_question":"",
+	"enabled":1,"sets_user_type":false}
 }
