@@ -10,8 +10,14 @@
 		var Answer = function (data) {
 
 			angular.extend(this, {
+				id: '',
+				id_Question: '',
                 text:'',
-				question: null,
+				order_index: null,
+				id_next_question: null,
+				enabled: null,
+				sets_user_type: null,
+
 				toJson: toJson
 
 			});

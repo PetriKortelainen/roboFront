@@ -9,7 +9,6 @@
 angular
   .module('robottiFrontApp', [
       //external dependencies here
-        'ngRoute',
-        'firebase'
+
   ]
 );

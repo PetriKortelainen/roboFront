@@ -12,14 +12,19 @@
 		var Tree = function (data) {
 			angular.extend(this, {
                 treeId : 0,
-                question: null
+                questions: null
 
 			});
 			angular.extend(this, data);
-			
+
 			if(data){
-				if(data.question){
-					this.question = new Question(data.question);
+				if(data.questions){
+					var entries = [];
+					angular.forEach(data.questions, function(value) {
+						var entry = new Question(value);
+						entries.push(entry);
+					});
+					this.questions = entries;
 				}
 			}
 		};
