@@ -1,34 +1,25 @@
 'use strict';
 
 angular
-  .module('robottiFrontApp')
+  .module('robottiFrontApp', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/newtree.html',
-        controller: 'qManagementCtrl'
+        templateUrl: 'views/posttree.html',
+        controller: 'postCtrl'
     })
     .otherwise({
       redirectTo: '/'
     });
 })
 
-.controller('qManagementCtrl', ['$scope', 'questionTrees',
-  // grab the questionTrees factory into the controller
-  function($scope, questionTrees) {
-
-    // add the questionTrees array to the scope
-    $scope.trees = questionTrees;
-
-    // a function to create new trees; called by ng-submit from the html-page
-    $scope.addTree = function() {
-      $scope.trees.$add({
-        // TODO: new questiontrees will go here
-        content: $scope.tree
-      });
-
-      // reset the tree input
-      $scope.tree = '';
+.controller('postCtrl', function ($scope, $http) {
+    $scope.postTree = function() {
+        var data = $scope.tree
+        console.log(data);
+        $http.post('http://localhost:8080/manage-api/post/', data)
+          .success(function(data, status) {
+            //TODO
+        })
     };
-  }
-]);
+});
