@@ -14,15 +14,16 @@
 		.module('robottiFrontApp')
 		.controller('RobotController', RobotController);
 
-	RobotController.$inject = ['$scope', 'treeService', '$log', '$rootScope'];
+	RobotController.$inject = ['$scope', 'treeService', '$log', '$rootScope', 'questionService'];
 
 	/* @ngInject */
-	function RobotController($scope, treeService, $log, $rootScope) {
+	function RobotController($scope, treeService, $log, $rootScope, questionService) {
 
         $scope.init = function(){
 			treeService.getTree().then(
 				function (data) {
-					$scope.tree = data;
+					questionService.setTree(data);
+					$rootScope.currentQuestion = 'Q1';
 				}
 			).catch(function(fallback) {
 				$log.error('Error while getting tree');

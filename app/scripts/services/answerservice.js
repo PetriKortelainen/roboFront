@@ -3,7 +3,7 @@
 
 	angular
 		.module('robottiFrontApp')
-		.factory('answerService', answerService);
+		.service('answerService', answerService);
 
     answerService.$inject = ['$http', 'Question'];
 

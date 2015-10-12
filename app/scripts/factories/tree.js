@@ -12,7 +12,9 @@
 		var Tree = function (data) {
 			angular.extend(this, {
                 treeId : 0,
-                questions: null
+                questions: null,
+
+				//declare public functions here
 
 			});
 			angular.extend(this, data);

@@ -5,15 +5,14 @@
         .module('robottiFrontApp')
         .directive('roboTree', roboTree);
 
-    function roboTree(){
+    roboTree.$inject=['$rootScope', 'Question'];
+
+    function roboTree($rootScope, Question){
         var directive = {
             restrict: 'E',
-            scope: {
-                tree: '=tree',
-            },
             templateUrl: '/views/robo-tree.template.html',
-            controller: function($scope, $element, $attrs) {
-                
+            controller: function($scope, $element, $attrs){
+
             }
         };
         return directive;

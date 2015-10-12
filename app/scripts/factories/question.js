@@ -40,5 +40,6 @@
 			var data = angular.toJson(this);
 			return data;
 		}
+
 	}
 })();

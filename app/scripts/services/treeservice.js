@@ -3,7 +3,7 @@
 
 	angular
 		.module('robottiFrontApp')
-		.factory('treeService', treeService);
+		.service('treeService', treeService);
 
     treeService.$inject = ['$http', '$q', 'Tree'];
 
