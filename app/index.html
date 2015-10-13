@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="styles/main.css">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 
-  </head>
-  <body>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/robot.css">
+  <!--THESE STYLES FOR DEMO PURPOSES ONLY-->
+  <style type="text/css">
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
 
-    <div ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
-        <robo-tree></robo-tree>
-    </div>
+    #sonera {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0px;
+      z-index: 1;
+    }
+  </style>
+  <!-- / -->
+</head>
 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<body>
+
+  <!--THIS IFRAME FOR DEMO PURPOSES ONLY -->
+  <div id="sonera">
+    <iframe width="100%" height="100%" frameborder="0" src="http://www.sonera.fi/yrityksille/pienet"></iframe>
+  </div>
+  <!-- / -->
+  <div ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
+    <robo-tree></robo-tree>
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
 
-    <!-- TODO BOOTSTRAP THESE-->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/main.js"></script>
+  <!-- TODO BOOTSTRAP THESE-->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/main.js"></script>
 
-    <script src="scripts/factories/question.js"></script>
-    <script src="scripts/factories/answer.js"></script>
-    <script src="scripts/factories/tree.js"></script>
+  <script src="scripts/factories/question.js"></script>
+  <script src="scripts/factories/answer.js"></script>
+  <script src="scripts/factories/tree.js"></script>
 
-    <script src="scripts/services/treeservice.js"></script>
-    <script src="scripts/services/questionservice.js"></script>
+  <script src="scripts/services/treeservice.js"></script>
+  <script src="scripts/services/questionservice.js"></script>
 
-    <script src="scripts/directives/robo-tree.js"></script>
-    <script src="scripts/directives/robo-question.js"></script>
+  <script src="scripts/directives/robo-tree.js"></script>
+  <script src="scripts/directives/robo-question.js"></script>
 
 </body>
+
 </html>

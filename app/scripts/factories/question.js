@@ -1,4 +1,4 @@
-(function () {
+(function() {
 	'use strict';
 
 	angular
@@ -9,7 +9,7 @@
 
 	/* @ngInject */
 	function Question(Answer) {
-		var Question = function (data) {
+		var Question = function(data) {
 
 			angular.extend(this, {
 				id: '',
@@ -22,10 +22,10 @@
 
 			});
 			angular.extend(this, data);
-			if(data) {
-				if(data.answers) {
+			if (data) {
+				if (data.answers) {
 					var answers = [];
-					angular.forEach(data.answers, function (value) {
+					angular.forEach(data.answers, function(value) {
 						var entry = new Answer(value);
 						answers.push(entry);
 					});
