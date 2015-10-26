@@ -17,7 +17,7 @@
 		return service;
 
 		function getTree(){
-			var url = '/scripts/testdata/tree-sql.json';
+			var url = 'scripts/testdata/tree-sql.json';
 
 			return $http.get(url).then(function(response) {
 					if(typeof response.data === 'object') {

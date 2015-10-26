@@ -11,7 +11,7 @@
 		var directive = {
 			restrict: 'E',
 			scope: {},
-			templateUrl: '/views/robo-question.template.html',
+			templateUrl: 'views/robo-question.template.html',
 			controller: function($scope, $element, $attrs) {
 				$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
 

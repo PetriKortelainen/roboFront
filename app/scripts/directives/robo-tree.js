@@ -10,7 +10,7 @@
     function roboTree($rootScope, Question){
         var directive = {
             restrict: 'E',
-            templateUrl: '/views/robo-tree.template.html',
+            templateUrl: 'views/robo-tree.template.html',
             controller: function($scope, $element, $attrs){
 
             }
