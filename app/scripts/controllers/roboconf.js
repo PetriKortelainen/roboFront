@@ -5,9 +5,13 @@ angular
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/posttree.html',
+				templateUrl: 'views/conf.html',
 				controller: 'postCtrl'
 			})
+      .when('/newtree', {
+        templateUrl: 'views/posttree.html',
+        controller: 'postCtrl'
+      })
 			.otherwise({
 				redirectTo: '/'
 			});
@@ -15,11 +19,11 @@ angular
 
 .controller('postCtrl', function($scope, $http) {
 	$scope.postTree = function() {
-		var data = $scope.tree
+		var data = $scope.tree;
 		console.log(data);
 		$http.post('http://localhost:8080/manage-api/post/', data)
 			.success(function(data, status) {
 				//TODO
-			})
+			});
 	};
 });

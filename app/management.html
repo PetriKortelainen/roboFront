@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RoboConf</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
   </head>
 
   <body ng-app="robottiFrontApp">
-    <h1>ROBOCONF</h1>
-    <p>Here you can add new question trees for the robot to use</p>
 
-    <nav>
-        <ul>
-         <li><a href="#">Home</a></li>
-      </ul>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://sonera.fi">
+            <img class="sonera-logo" alt="Brand" src="favicon.ico">
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#/">RoboConf</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#/">Dialog</a></li>
+            <li><a href="#/">Analytics</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/">Logout</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
-    <section>
-        <div ng-view>
-        <!-- partial views will be built inside this div -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" ng-controller="SideNavCtrl">
+          <ul class="nav nav-sidebar">
+            <li ng-class="{ active: isActive('/')}"><a href="#/">Overview <span class="sr-only">(current)</span></a></li>
+            <li ng-class="{ active: isActive('/newtree')}"><a href="#/newtree">New Dialog</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Ipsum</a></li>
+          </ul>
         </div>
-    </section>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="view">
+            <div ng-view>
+            <!-- partial views will be built inside this div -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -28,6 +64,7 @@
 
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/roboconf.js"></script>
+    <script src="scripts/controllers/sidenavctrl.js"></script>
     
   </body>
-</html> 
+</html>
