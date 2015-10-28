@@ -19,6 +19,8 @@
 	/* @ngInject */
 	function RobotController($scope, treeService, $log, $rootScope, questionService) {
 
+		$scope.toggle = true;
+
         $scope.init = function(){
 			treeService.getTree().then(
 				function (data) {

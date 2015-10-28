@@ -32,14 +32,25 @@
 
 <body>
 
-  <!--THIS IFRAME FOR DEMO PURPOSES ONLY
+  <!--THIS IFRAME FOR DEMO PURPOSES ONLY -->
   <div id="sonera">
     <iframe width="100%" height="100%" frameborder="0" src="http://www.sonera.fi/yrityksille/pienet"></iframe>
   </div>
-   / -->
-  <div ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
-    <robo-tree></robo-tree>
+   <!-- / -->
+
+<div  ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
+    <div class="container"
+     ng-init="startAni2 = false;">
+          <div class="box-base box2"
+        ng-class="{'move-me': startAni2}">
+        <button class="toggle"
+             ng-click="startAni2 = !startAni2">Myyntirobotti</button>
+             <hr id="chat-stripe">
+          <robo-tree></robo-tree>
+          </div>
   </div>
+</div>
+
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>

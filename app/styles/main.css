@@ -1,6 +1,5 @@
 @import 'management.css';
 @import 'robot.css';
-
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -84,4 +83,35 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  /* Chat toggle visibility */
+
+  .box-base {
+    text-align: center;
+    opacity:0;
+    margin-top: 10px;
+    color: #73369e;
+    font-weight: bold;
+    z-index: 2;
+    right: 10px;
+    width: 255px;
+    height: 285px;
+    background-color: white;
+    border: 1px solid #73369e;
+    padding:5px;
+    border-radius: 7px;
+    font-family: "HelveticaNeue", Arial, sans-serif;
+}
+.box-base.box2 {
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    position: absolute;
+    bottom: -245px;
+    opacity:1;
+}
+.box-base.box2.move-me {
+    bottom: 0px;
+    opacity:1;
+
+}
 }
