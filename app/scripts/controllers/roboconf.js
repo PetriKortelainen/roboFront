@@ -2,7 +2,7 @@
 'use strict';
 
 angular
-	.module('robottiFrontApp', ['ngRoute'])
+	.module('robottiFrontApp', ['ngRoute', 'ui.tree'])
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -32,11 +32,10 @@ angular
         $scope.data.splice(0, 0, a);
       };
 
-      $scope.newSubItem = function (scope) {
-        var nodeData = scope.$modelValue;
+      $scope.newSubItem = function ($scope) {
+        var nodeData = $scope.$modelValue;
         nodeData.nodes.push({
-          id: nodeData.id * 10 + nodeData.nodes.length,
-          title: nodeData.title + '.' + (nodeData.nodes.length + 1),
+          id: nodeData.id + '.' + (nodeData.nodes.length + 1),
           nodes: []
         });
       };
@@ -50,53 +49,22 @@ angular
       };
 
       $scope.data = [{
-        'id': 1,
-        'title': 'node1',
+        'id': '1',
         'nodes': [
           {
-            'id': 11,
-            'title': 'node1.1',
+            'id': '1.1',
             'nodes': [
               {
-                'id': 111,
-                'title': 'node1.1.1',
+                'id': '1.1.1',
                 'nodes': []
               }
             ]
           },
           {
-            'id': 12,
-            'title': 'node1.2',
-            'nodes': []
-          }
-        ]
-      }, {
-        'id': 2,
-        'title': 'node2',
-        'nodrop': true, // An arbitrary property to check in custom template for nodrop-enabled
-        'nodes': [
-          {
-            'id': 21,
-            'title': 'node2.1',
-            'nodes': []
-          },
-          {
-            'id': 22,
-            'title': 'node2.2',
-            'nodes': []
-          }
-        ]
-      }, {
-        'id': 3,
-        'title': 'node3',
-        'nodes': [
-          {
-            'id': 31,
-            'title': 'node3.1',
+            'id': '1.2',
             'nodes': []
           }
         ]
       }];
     }]);
-
 }());
