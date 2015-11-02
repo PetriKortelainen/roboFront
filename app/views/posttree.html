@@ -4,22 +4,21 @@
 
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
-  <div ui-tree-handle class="tree-node tree-node-content">
-  {{node.id}}
- <input type="text" placeholder="Answer" ng-model="node.answertext"><input type="text" placeholder="Question" ng-model="node.questiontext">
-    <a class="btn btn-primary btn-xs" data-nodrag ng-click="newSubItem(this)"><span
-        class="glyphicon glyphicon-plus"></span></a>
-            <a class="btn btn-danger btn-xs" data-nodrag ng-click="remove(this)"><span
-        class="glyphicon glyphicon-remove"></span></a>
-              <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><span
+  <div ui-tree-handle class="tree-node tree-node-content input-group">
+                <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)">{{node.id}}<span class="divider-vertical"></span><span
         class="glyphicon"
         ng-class="{
           'glyphicon-chevron-right': collapsed,
           'glyphicon-chevron-down': !collapsed
         }"></span></a>
+ <input type="text" placeholder="Answer" ng-model="node.answertext"><input type="text" placeholder="Question" ng-model="node.questiontext">
+    <a class="btn btn-primary btn-xs" data-nodrag ng-click="newSubItem(this)"><span
+        class="glyphicon glyphicon-plus"></span></a>
+            <a class="btn btn-danger btn-xs" data-nodrag ng-click="remove(this)"><span
+        class="glyphicon glyphicon-remove"></span></a>
   </div>
   <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'" style="border-left: 2px solid #f5f5f5;">
     </li>
   </ol>
 </script>
