@@ -1,0 +1,127 @@
+[
+    {
+        "dialogId": 1,
+        "name": "Perusdialogi",
+        "enabled": true,
+        "created": 1445851765000,
+        "questions": [
+            {
+                "questionId": 2,
+                "text": "Onko hyvä fiilis?",
+                "answerType": "choice",
+                "answerOptions": [
+                    {
+                        "answerOptionId": 4,
+                        "text": "Ei",
+                        "orderIndex": 2,
+                        "nextQuestionId": null,
+                        "givenAnswers": [
+                            {
+                                "id": {
+                                    "sessionId": "3",
+                                    "answerOptionId": 4
+                                },
+                                "created": 1446447299000
+                            }
+                        ]
+                    },
+                    {
+                        "answerOptionId": 3,
+                        "text": "Joo",
+                        "orderIndex": 1,
+                        "nextQuestionId": null,
+                        "givenAnswers": [
+                            {
+                                "id": {
+                                    "sessionId": "2",
+                                    "answerOptionId": 3
+                                },
+                                "created": 1446447299000
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "questionId": 3,
+                "text": "Ostatko?",
+                "answerType": "choice",
+                "answerOptions": [
+                    {
+                        "answerOptionId": 6,
+                        "text": "En",
+                        "orderIndex": 2,
+                        "nextQuestionId": null,
+                        "givenAnswers": [
+                            {
+                                "id": {
+                                    "sessionId": "4",
+                                    "answerOptionId": 6
+                                },
+                                "created": 1446447299000
+                            }
+                        ]
+                    },
+                    {
+                        "answerOptionId": 5,
+                        "text": "Kyllä",
+                        "orderIndex": 1,
+                        "nextQuestionId": null,
+                        "givenAnswers": []
+                    }
+                ]
+            },
+            {
+                "questionId": 1,
+                "text": "Miten menee?",
+                "answerType": "choice",
+                "answerOptions": [
+                    {
+                        "answerOptionId": 1,
+                        "text": "Ihan hyvin",
+                        "orderIndex": 1,
+                        "nextQuestionId": 2,
+                        "givenAnswers": [
+                            {
+                                "id": {
+                                    "sessionId": "1",
+                                    "answerOptionId": 1
+                                },
+                                "created": 1446447299000
+                            },
+                            {
+                                "id": {
+                                    "sessionId": "2",
+                                    "answerOptionId": 1
+                                },
+                                "created": 1446447299000
+                            },
+                            {
+                                "id": {
+                                    "sessionId": "3",
+                                    "answerOptionId": 1
+                                },
+                                "created": 1446447299000
+                            }
+                        ]
+                    },
+                    {
+                        "answerOptionId": 2,
+                        "text": "Huonosti",
+                        "orderIndex": 2,
+                        "nextQuestionId": 3,
+                        "givenAnswers": [
+                            {
+                                "id": {
+                                    "sessionId": "4",
+                                    "answerOptionId": 2
+                                },
+                                "created": 1446447299000
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

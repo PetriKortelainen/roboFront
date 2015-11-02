@@ -18,7 +18,13 @@ angular
 			});
 	})
 
-    .controller('postCtrl', ['$scope', function ($scope) {
+    .controller('postCtrl', ['$scope', '$http', function ($scope, $http) {
+
+      $scope.sendData = function() {
+        var dataObj = JSON.stringify($scope.data);
+        $http.post('localhost:8081/xxx', dataObj);
+      };
+
       $scope.remove = function (scope) {
         scope.remove();
       };
@@ -36,6 +42,8 @@ angular
         var nodeData = $scope.$modelValue;
         nodeData.nodes.push({
           id: nodeData.id + '.' + (nodeData.nodes.length + 1),
+          answertext: '',
+          questiontext: '',
           nodes: []
         });
       };
@@ -50,6 +58,8 @@ angular
 
       $scope.data = [{
         'id': '1',
+        'answertext' : '',
+        'questiontext' : '',
         'nodes': [
           {
             'id': '1.1',

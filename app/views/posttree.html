@@ -6,7 +6,7 @@
 <script type="text/ng-template" id="nodes_renderer.html">
   <div ui-tree-handle class="tree-node tree-node-content">
   {{node.id}}
- <input type="text" placeholder="Answer"><input type="text" placeholder="Question">
+ <input type="text" placeholder="Answer" ng-model="node.answertext"><input type="text" placeholder="Question" ng-model="node.questiontext">
     <a class="btn btn-primary btn-xs" data-nodrag ng-click="newSubItem(this)"><span
         class="glyphicon glyphicon-plus"></span></a>
             <a class="btn btn-danger btn-xs" data-nodrag ng-click="remove(this)"><span
@@ -27,11 +27,13 @@
 <div class="row">
   <div class="col-sm-12">
     <div ui-tree id="tree-root">
-      <form>
+      <form ng-submit="sendData()">
       <ol ui-tree-nodes ng-model="data">
         <li><input type="text" placeholder="Dialog Name"></li>
+        <li><input type="text" placeholder="First Question"></li>
         <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
       </ol>
+      <button class="col-sm-1 btn btn-md btn-danger" type="submit">Create</button>
       </form>
     </div>
   </div>
