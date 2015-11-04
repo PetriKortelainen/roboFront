@@ -1,0 +1,18 @@
+<div ui-tree-handle  class="tree-node tree-node-content input-group">
+  <a class="input-group-addon" ng-class="{'tree-btn-red': collapsed, 'tree-btn':!collapsed}" ng-click="toggle(this);">
+    <span class="glyphicon glyphicon-tree-conifer"></span>
+  </a>
+  <div class="dialog-input">
+    <input class="form-control input-sm" type="text" placeholder="Dialog Name" ng-model="node.dialogname">
+  </div>
+  <span class="input-group-btn"></span>
+  <div class="dialog-input">
+    <input class="form-control input-sm" type="text" placeholder=" First Question" ng-model="node.questiontext">
+  </div>
+  <a class="btn input-group-addon new-sub-item-btn" ng-click="newSubItem(this)">
+    <span class="glyphicon glyphicon-plus"></span>
+  </a>
+</div>
+<ol class="list-clean" ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+  <li class="dialog-row"ng-repeat="node in node.nodes" ui-tree-node ng-include="'templates/new-dialog-renderer.template.html'"></li>
+</ol>

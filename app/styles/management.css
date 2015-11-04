@@ -47,6 +47,7 @@ body {
     -webkit-appearance: none;
     outline: none;
     border: 0;
+    width: 40px;
     background: transparent;
     display:block;
     text-align:center;
@@ -61,23 +62,86 @@ body {
   color: #fff;
 }
 
-.new-dialog-btn:hover {
+.new-dialog-btn:hover, .new-dialog-btn:focus {
   background: #9268AB;
   color: #fff;
 }
 
-.new-dialog-btn:focus {
-  background: #9268AB;
-  color: #fff;
-}
 /*
 * New Dialog
 */
+
+.list-start {
+  list-style-type:none;
+  -webkit-padding-start: 0px;
+}
+
+.list-clean {
+  list-style-type:none;
+}
+
+.dropdown-fix {
+    position: relative;
+  z-index: 10000;
+}
+
+.dialog-area {
+  overflow-y: auto;
+}
+
+.dialog-row {
+  border-left: 2px solid #f5f5f5;
+}
+
 .divider-vertical {
-height: 5px;
-margin: 0 6px;
-border-left: 1px solid #F2F2F2;
-border-right: 1px solid #FFF;
+  height: 5px;
+  margin: 0 6px;
+  border-left: 1px solid #652D86;
+}
+
+
+.new-sub-item-btn {
+  color: #00B48C;
+}
+
+.new-sub-item-btn:hover, .new-sub-item-btn:focus {
+  color: #00cea0;
+}
+
+.remove-btn {
+  color: #ff6319;
+}
+
+.remove-btn:hover, .remove-btn:focus {
+  color: #ff864c;
+}
+
+.toggle-btn {
+  color: #652D86;
+}
+
+.toggle-btn:hover, .toggle-btn:focus {
+  color: #9268AB;
+}
+
+.tree-btn {
+  color: #652D86;
+}
+
+.tree-btn:hover {
+  color: #9268AB;
+}
+
+.tree-btn-red {
+  color: #9268AB;
+}
+
+.tree-btn-red:hover {
+  color: #652D86;
+}
+
+.tree-node {
+  margin-top: 8px;
 }
 
 /*

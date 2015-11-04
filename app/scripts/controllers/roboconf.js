@@ -2,7 +2,7 @@
 'use strict';
 
 angular
-	.module('robottiFrontApp', ['ngRoute', 'ui.tree'])
+	.module('robottiFrontApp', ['ngRoute', 'ui.tree', 'ui.bootstrap'])
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -23,6 +23,7 @@ angular
       $scope.sendData = function() {
         var dataObj = JSON.stringify($scope.data);
         $http.post('localhost:8081/xxx', dataObj);
+        console.log('sent: ' + dataObj);
       };
 
       $scope.remove = function (scope) {
@@ -33,12 +34,11 @@ angular
         scope.toggle();
       };
 
-      $scope.moveLastToTheBeginning = function () {
-        var a = $scope.data.pop();
-        $scope.data.splice(0, 0, a);
-      };
-
       $scope.newSubItem = function ($scope) {
+        if ($scope.collapsed) {
+          $scope.toggle();
+        }
+
         var nodeData = $scope.$modelValue;
         nodeData.nodes.push({
           id: nodeData.id + '.' + (nodeData.nodes.length + 1),
@@ -48,33 +48,11 @@ angular
         });
       };
 
-      $scope.collapseAll = function () {
-        $scope.$broadcast('collapseAll');
-      };
-
-      $scope.expandAll = function () {
-        $scope.$broadcast('expandAll');
-      };
-
       $scope.data = [{
         'id': '1',
-        'answertext' : '',
+        'dialogname' : '',
         'questiontext' : '',
-        'nodes': [
-          {
-            'id': '1.1',
-            'nodes': [
-              {
-                'id': '1.1.1',
-                'nodes': []
-              }
-            ]
-          },
-          {
-            'id': '1.2',
-            'nodes': []
-          }
-        ]
+        'nodes': []
       }];
     }]);
 }());
