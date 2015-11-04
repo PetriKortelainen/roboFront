@@ -2,7 +2,7 @@
 'use strict';
 
 angular
-	.module('robottiFrontApp', ['ngRoute', 'ui.tree', 'ui.bootstrap'])
+	.module('robottiFrontApp', ['ngRoute', 'ui.tree'])
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
