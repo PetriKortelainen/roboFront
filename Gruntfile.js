@@ -308,7 +308,8 @@ module.exports = function(grunt) {
 					'jquery/dist/jquery.js': 'jquery/dist/jquery.min.js',
 					'angular/angular.js': 'angular/angular.min.js',
                     'bootstrap/dist/js/bootstrap.js':'bootstrap/dist/js/bootstrap.min.js',
-                    'angular-route/angular-route.js':'angular-route/angular-route.min.js'
+                    'angular-route/angular-route.js':'angular-route/angular-route.min.js',
+                    'angular-ui-tree/dist/angular-ui-tree.js':'angular-ui-tree/dist/angular-ui-tree.min.js'
 				}
 			}
 		},
