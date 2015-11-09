@@ -37,7 +37,7 @@
                   {
                     "id":"A2.1",
                     "id_Question":"Q2",
-                    "text":"Maanviljelys",
+                    "text":"Maatalous",
                     "order_index":true,
                     "id_next_question":"Q3.1",
                     "enabled":1,

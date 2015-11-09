@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/robotavatar.css">
   <!--THESE STYLES FOR DEMO PURPOSES ONLY-->
   <style type="text/css">
     body,
@@ -43,10 +44,43 @@
      ng-init="startAni2 = false;">
           <div class="box-base box2"
         ng-class="{'move-me': startAni2}">
+        
+		
+        
+        <!--<input class="toggle" ng-click="startAni2 = !startAni2" type="image" src="images/Robotavatar.gif" style="width:45px;height:45px;"/> -->
+       
+               <!--ROBOTAVATAR STARTS HERE
+       <div id="avatarbackground">
+        <div id="avatarleye">
+        </div>
+        <div id="avatarreye">
+        </div>
+        <div id="avatareyelids">
+        </div>
+       </div>
+       ROBOTAVATAR ENDS HERE-->
+
+       
         <button class="toggle"
              ng-click="startAni2 = !startAni2">Myyntirobotti</button>
              <hr id="chat-stripe">
+             
+        <!--ROBOTAVATAR STARTS HERE-->
+       <div id="avatarbackground">
+        <div id="avatarleye">
+        </div>
+        <div id="avatarreye">
+        </div>
+        <div id="avatareyelids">
+        </div>
+        <div id="avataragriculture">
+        </div>
+       </div>
+       <!--ROBOTAVATAR ENDS HERE-->
+        
+         
           <robo-tree></robo-tree>
+      
           </div>
   </div>
 </div>

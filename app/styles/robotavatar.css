@@ -1,0 +1,124 @@
+#avatarbackground {
+	width: 45px;
+	height: 45px;
+	background: #73369e;
+    -moz-border-radius: 45px; 
+    -webkit-border-radius: 45px; 
+    border-radius: 45px;
+    position: relative;
+}
+
+#avatarbackground:before {
+   width: 33px; 
+   height: 20px; 
+   background: #8cc961; 
+   content: "";
+   position: absolute;
+   top: 27%;
+   left: 13%;
+}
+
+#avatarbackground:after {
+   content: "";
+   width: 20px; 
+   height: 4px; 
+   background: #8cc961; 
+   position: absolute;
+   top: 77%;
+   left: 26%;
+} 
+
+#avatarleye{
+   width: 7px;
+   height: 7px;
+   background: white; 
+   -moz-border-radius: 7px; 
+   -webkit-border-radius: 7px; 
+   position: absolute;
+   top: 50%;
+   left: 20%;
+}
+
+#avatarreye{
+   width: 7px;
+   height: 7px;
+   background: white; 
+   -moz-border-radius: 7px; 
+   -webkit-border-radius: 7px; 
+   position: absolute;
+   top: 50%;
+   left: 65%;
+}
+
+#avatareyelids{
+   width: 30px;
+   height: 10px;
+   background: #8cc961; 
+   position: relative;
+   top: 26%;
+   left: 15%;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-name: blink;
+   -webkit-animation-duration: 5s; 
+   -webkit-animation-delay: 5s;
+}
+
+@-webkit-keyframes blink {
+    0%   {top: 27%;}
+    3%   {top: 50%;}
+    8%   {top: 26%;}
+    100% {top: 27%;}
+}
+
+#avataragriculture{
+   display: none;
+   width: 40px;
+   height: 3px;
+   background: #FFD71B; 
+   position: relative;
+   top: 10%;
+   left: 7%;
+   -webkit-animation-iteration-count: 1;
+   -webkit-animation-name: hat;
+   -webkit-animation-duration: 1s; 
+   -webkit-animation-timing-function: ease-in-out;
+
+}
+
+#avataragriculture:before{
+   content:"";
+   width: 33px; 
+   height: 7px;  
+   background: #FFD71B; 
+   position: absolute;
+   bottom: 70%;
+   left: 8%;
+}
+
+@-webkit-keyframes hat {
+    0%   {bottom: 100%;}
+    100% {bottom: 70%;}
+}
+
+#talkbubble {
+   width: auto;
+   height: 80px;
+   position: relative;
+   padding: 3px;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border: 2px solid grey;
+}
+
+#talkbubble:before {
+   content:"";
+   position: absolute;
+   right: 60%;
+   top: 26px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid;
+   border-bottom: 13px solid transparent;
+}
+
