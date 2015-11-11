@@ -1,13 +1,13 @@
 <div ui-tree-handle  class="tree-node tree-node-content input-group">
-  <a class="input-group-addon" ng-class="{'tree-btn-red': collapsed, 'tree-btn':!collapsed}" ng-click="toggle(this);">
+  <a class="btn input-group-addon" ng-class="{'tree-btn-red': collapsed, 'tree-btn':!collapsed}" ng-click="toggle(this);">
     <span class="glyphicon glyphicon-tree-conifer"></span>
   </a>
   <div class="dialog-input">
-    <input class="form-control input-sm" type="text" placeholder="Dialog Name" ng-model="node.dialogname">
+    <input class="form-control input-sm" type="text" placeholder="Dialog Name" ng-model="node.dialogName">
   </div>
   <span class="input-group-btn"></span>
   <div class="dialog-input">
-    <input class="form-control input-sm" type="text" placeholder=" First Question" ng-model="node.questiontext">
+    <input class="form-control input-sm" type="text" placeholder=" First Question" ng-model="node.questionText">
   </div>
   <a class="btn input-group-addon new-sub-item-btn" ng-click="newSubItem(this)">
     <span class="glyphicon glyphicon-plus"></span>
