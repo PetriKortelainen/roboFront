@@ -1,7 +1,25 @@
 {{question.text}}
-<div  ng-app="robottiFrontApp" id="robot" ng-controller="DialogCtrl">
-		<button ng-click="openQuestionForm()">Aloita kysely!</button>
+<div ng-if="question.id == 'Q1'">
+    <div ng-repeat="answer in question.answers">
+        <button ng-click="openQuestionForm(); answerQuestion(answer)">{{answer.text}}</button>
+    </div>
 </div>
-<div ng-repeat="answer in question.answers">
-    <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
+
+<div ng-if="question.answer_type == 'choise' && question.id != 'Q1'">
+    <div ng-repeat="answer in question.answers">
+        <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
+    </div>
+</div>
+
+<div ng-if="question.answer_type == 'checkbox'">
+    <div ng-repeat="answer in question.answers">
+        <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
+    </div>
+</div>
+
+<div ng-if="question.answer_type == 'form'">
+    <p>Puhelin tai sähköposti</p><input type="text" ng-model="contactInfo"></input>
+    <div ng-repeat="answer in question.answers">
+        <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
+    </div>
 </div>
