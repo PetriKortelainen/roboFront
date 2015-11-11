@@ -6,7 +6,7 @@
                 "id":"Q1",
                 "text":"Hei, olen robotti, haluatko tiet\u00e4\u00e4 h\u00e4rp\u00e4kkeest\u00e4?",
                 "enabled":true,
-                "answer_type":"radio",
+                "answer_type":"choise",
                 "answers":[
                   {
                     "id": "A1.1",
@@ -32,7 +32,7 @@
                 "id":"Q2",
                 "text":"Mill\u00e4 alalla olet?",
                 "enabled":true,
-                "answer_type":"radio",
+                "answer_type":"choise",
                 "answers":[
                   {
                     "id":"A2.1",
@@ -83,7 +83,7 @@
               },
               {
                 "id":"Q3.1",
-                "text":"Taharokkoha ti\u00e4t\u00f6\u00f6",
+                "text":"Mikä kiinnostaa?",
                 "enabled":true,
                 "answer_type":"checkbox",
                 "answers":[
@@ -304,7 +304,7 @@
                 "id":"Q4",
                 "text":"Hei t\u00e4\u00e4 meid\u00e4n h\u00e4rp\u00e4ke osaa t\u00e4n kaiken, pistet\u00e4\u00e4nk\u00f6 tulemaan?",
                 "enabled":true,
-                "answer_type":"radio",
+                "answer_type":"choise",
                 "answers":[
                   {
                     "id":"A4.1",
@@ -336,8 +336,8 @@
                 ]
               },
               {
-                "id":"Q5",
-                "text":"[insert redirect code here]",
+                "id":"Q5.1",
+                "text":"Sinut ohjataan verkkokauppaamme 3 sekunnin kuluessa",
                 "enabled":true,
                 "answer_type":"redirect"
             },
@@ -350,7 +350,7 @@
                   {
                     "id":"A5.2.1",
                     "id_Question":"Q5.2",
-                    "text":"[puhnro tai sposti formi]",
+                    "text":"Lähetä",
                     "order_index":true,
                     "id_next_question":"",
                     "enabled":1,
