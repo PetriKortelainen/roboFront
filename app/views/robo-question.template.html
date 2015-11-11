@@ -1,5 +1,7 @@
-
 {{question.text}}
+<div  ng-app="robottiFrontApp" id="robot" ng-controller="DialogCtrl">
+		<button ng-click="openQuestionForm()">Aloita kysely!</button>
+</div>
 <div ng-repeat="answer in question.answers">
     <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
 </div>

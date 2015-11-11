@@ -8,7 +8,8 @@
  */
 angular
   .module('robottiFrontApp', [
-      //external dependencies here
+          'ngDialog' //external dependencies here
+
 
   ]
 );

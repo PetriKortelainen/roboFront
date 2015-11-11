@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
+  <link rel="stylesheet" href="bower_components/ng-dialog/css/ngdialog-theme-default.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!--THESE STYLES FOR DEMO PURPOSES ONLY-->
+
+</head>
+
+<body>
+
+
+
+<div  ng-app="robottiFrontApp" id="robot" ng-controller="DialogCtrl">
+		<button ng-click="openQuestionForm()">Aloita kysely!</button>
+</div>
+
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+
+
+  <!-- TODO BOOTSTRAP THESE-->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/controllers/Dialog.js"></script>
+
+  <script src="scripts/factories/question.js"></script>
+  <script src="scripts/factories/answer.js"></script>
+  <script src="scripts/factories/tree.js"></script>
+
+  <script src="scripts/services/treeservice.js"></script>
+  <script src="scripts/services/questionservice.js"></script>
+
+  <script src="scripts/directives/robo-tree.js"></script>
+  <script src="scripts/directives/robo-question.js"></script>
+
+</body>
+
+</html>
