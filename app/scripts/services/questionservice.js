@@ -18,13 +18,13 @@
 		return service;
 
 		function setTree(tree){
-			this.tree = new Tree(tree);
+			this.tree = tree;
 		}
 
-		function getQuestionById(id){
+		function getQuestionById(id, tree){
 			var question;
 			angular.forEach(this.tree.questions, function(value){
-				if(value.id == id){
+				if(value.questionId == id){
 					question = value;
 				}
 			});

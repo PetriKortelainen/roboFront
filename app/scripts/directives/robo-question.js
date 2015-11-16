@@ -5,23 +5,34 @@
 		.module('robottiFrontApp')
 		.directive('roboQuestion', roboQuestion);
 
-	roboQuestion.$inject = ['$rootScope', 'questionService', 'ngDialog'];
+	roboQuestion.$inject = ['$rootScope', 'questionService', 'ngDialog', 'answerService','$timeout'];
 
-	function roboQuestion($rootScope, questionService, ngDialog) {
+	function roboQuestion($rootScope, questionService, ngDialog, answerService, $timeout) {
 		var directive = {
 			restrict: 'E',
 			scope: {},
 			templateUrl: 'views/robo-question.template.html',
 			controller: function($scope, $element, $attrs) {
-				$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
+				if(typeof questionService.tree==='object'){
+					$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
+				} else {
+					$timeout(function () {
+						$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
+					}, 1000);
+				}
+
 
 				$scope.answerQuestion = function(answer) {
-					$rootScope.currentQuestion = answer.id_next_question;
+					answerService.postAnswer(answer);
+					console.log(answer);
+					$rootScope.currentQuestion = answer.nextQuestionId;
 					$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
-					if($scope.question.answer_type == 'redirect') {
-						console.log("REDIRECT HERE")
-					}
 
+					if($scope.question){
+						if($scope.question.answer_type == 'redirect') {
+							console.log("REDIRECT HERE")
+						}
+					}
 				}
 
 				$scope.openQuestionForm = function() {

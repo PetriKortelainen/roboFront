@@ -10,14 +10,16 @@
 	/* @ngInject */
 	function answerService($http) {
         var service = {
-            insertAnswerByQuestionId : insertAnswerByQuestionId
+            postAnswer : postAnswer
         };
 
-		function insertAnswerByQuestionId(data, id){
+		return service;
+
+		function postAnswer(answer){
 			$http({
 				url: 'http://localhost:8081/',
 				method : 'POST',
-				data: data.toJson(),
+				data: answer,
 				headers : {
 					'Content-Type': 'application/json',
 

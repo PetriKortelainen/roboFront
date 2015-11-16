@@ -12,11 +12,11 @@
 		var Question = function(data) {
 
 			angular.extend(this, {
-				id: '',
+				questionId: '',
 				text: '',
-				enabled: null,
-				answers: null,
-				answer_type: '',
+				orderIndex: 0,
+				answerOptions: null,
+				answerType: '',
 				//public functions declared here
 				toJson: toJson
 
@@ -25,7 +25,7 @@
 			if (data) {
 				if (data.answers) {
 					var answers = [];
-					angular.forEach(data.answers, function(value) {
+					angular.forEach(data.answerOptions, function(value) {
 						var entry = new Answer(value);
 						answers.push(entry);
 					});

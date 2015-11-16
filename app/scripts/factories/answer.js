@@ -10,7 +10,7 @@
 		var Answer = function (data) {
 
 			angular.extend(this, {
-				answer_id: '',
+				id: '',
                 text:'',
 				order_index: null,
 				id_next_question: null,
@@ -24,6 +24,10 @@
 		};
 
 		return Answer;
+
+		if(data){
+			delete this.givenAnswers;
+		}
 
 		function toJson() {
 			var data = angular.toJson(this);

@@ -17,11 +17,12 @@
 		return service;
 
 		function getTree(){
-			var url = 'scripts/testdata/tree-sql.json';
+			var url = 'http://localhost:8081/dialog/repository/all';
 
 			return $http.get(url).then(function(response) {
-					if(typeof response.data === 'object') {
-						return new Tree(response.data);
+					if(typeof response.data[0] === 'object') {
+						var tree = new Tree(response.data[0]);
+						return tree;
 					} else {
 						return $q.reject(response.data);
 					}

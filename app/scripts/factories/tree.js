@@ -11,7 +11,10 @@
 	function Tree(Question) {
 		var Tree = function (data) {
 			angular.extend(this, {
-                treeId : 0,
+                dialogId : 0,
+				name: '',
+				enabled: null,
+				created: 0,
                 questions: null,
 
 				//declare public functions here
