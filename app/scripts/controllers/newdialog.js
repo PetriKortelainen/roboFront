@@ -6,24 +6,26 @@ angular
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/conf.html',
-        controller: 'postCtrl'
+        templateUrl: 'views/overview.html',
+        controller: 'OverviewCtrl'
       })
       .when('/newtree', {
         templateUrl: 'views/posttree.html',
-        controller: 'postCtrl'
+        controller: 'PostCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
   })
-  .controller('postCtrl', ['$scope', '$http', function($scope, $http) {
-
+  .controller('PostCtrl', ['$scope', '$http', function($scope, $http) {
+      /*
+      New Dialog - posttree.html
+      */
       $scope.sendData = function() {
-        var temp = angular.toJson($scope.data);
-        console.log('temp: ' + temp);
-        var dataObj = temp.substring(1, temp.length-1);
-        $http.post('localhost:8081/xxx', dataObj);
+        var tmp = angular.toJson($scope.data);
+        console.log('tmp: ' + tmp);
+        var dataObj = tmp.substring(1, tmp.length-1);
+        $http.post('http://localhost:8081/manage-api/post/', dataObj);
         console.log('sent: ' + dataObj);
       };
 

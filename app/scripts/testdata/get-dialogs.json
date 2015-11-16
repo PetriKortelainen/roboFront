@@ -1,0 +1,25 @@
+[{
+      "id":"1",
+      "dialogName": "Dialog 1",
+      "enabled": true
+    },
+    {
+      "id":"2",
+      "dialogName": "Allun puu",
+      "enabled": false
+    },
+    {
+      "id":"3",
+      "dialogName": "Test treedialog",
+      "enabled": false
+    },
+    {
+      "id":"4",
+      "dialogName": "Test",
+      "enabled": true
+    },
+    {
+      "id":"5",
+      "dialogName": "Test2",
+      "enabled": false
+    }]
