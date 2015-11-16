@@ -1,0 +1,20 @@
+<h1 class="page-header">Dialog</h1>
+<h3 class="sub-header">Overview</h3>
+<div class="table-responsive">
+  <table class="table table-striped" ng-model="dialogs">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Activate</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in dialogs" ng-include="'templates/dialog-row.template.html'"></tr>
+    </tbody>
+  </table>
+</div>
+<a href="#/newtree" class="btn btn-normal btn-md new-dialog-btn">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Dialog
+</a>
