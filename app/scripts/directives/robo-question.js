@@ -25,7 +25,9 @@
 				}
 
 				$scope.openQuestionForm = function() {
-					ngDialog.openConfirm({template: 'dialogtest.html',
+					ngDialog.openConfirm({
+						template: 'views/robo-question.template.html',
+						scope: $scope
 
 					}).then(
 						function(value) {

@@ -1,4 +1,4 @@
-{{question.text}}
+<p>{{question.text}}</p>
 <div ng-if="question.id == 'Q1'">
     <div ng-repeat="answer in question.answers">
         <button ng-click="openQuestionForm(); answerQuestion(answer)">{{answer.text}}</button>
