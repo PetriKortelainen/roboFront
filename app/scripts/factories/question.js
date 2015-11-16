@@ -23,13 +23,13 @@
 			});
 			angular.extend(this, data);
 			if (data) {
-				if (data.answers) {
+				if (data.answerOptions) {
 					var answers = [];
 					angular.forEach(data.answerOptions, function(value) {
 						var entry = new Answer(value);
 						answers.push(entry);
 					});
-					this.answers = answers;
+					this.answerOptions = answers;
 				}
 			}
 		};

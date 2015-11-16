@@ -24,7 +24,6 @@
 
 				$scope.answerQuestion = function(answer) {
 					answerService.postAnswer(answer);
-					console.log(answer);
 					$rootScope.currentQuestion = answer.nextQuestionId;
 					$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
 

@@ -10,27 +10,36 @@
 		var Answer = function (data) {
 
 			angular.extend(this, {
-				id: '',
+				answerOptionId: 0,
                 text:'',
-				order_index: null,
-				id_next_question: null,
-				sets_user_type: null,
+				orderIndex: 0,
+				nextQuestionId: 0,
 
-				toJson: toJson
+				toJson: toJson,
+				toBackEnd: toBackEnd
 
 			});
 			angular.extend(this, data);
+
+			if(data){
+				delete this.givenAnswers;
+			}
 
 		};
 
 		return Answer;
 
-		if(data){
-			delete this.givenAnswers;
-		}
-
 		function toJson() {
 			var data = angular.toJson(this);
+			return data;
+		}
+
+		function toBackEnd(){
+			var data = {};
+			delete this.nextQuestionId;
+			data.answer_option_id = this.answerOptionId;
+			data.sessionId = "";
+			data = angular.toJson(data);
 			return data;
 		}
 	}

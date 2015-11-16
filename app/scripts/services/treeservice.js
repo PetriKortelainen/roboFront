@@ -5,10 +5,10 @@
 		.module('robottiFrontApp')
 		.service('treeService', treeService);
 
-    treeService.$inject = ['$http', '$q', 'Tree'];
+    treeService.$inject = ['$http', '$q', 'Tree', 'ADDRESS'];
 
 	/* @ngInject */
-	function treeService($http, $q, Tree) {
+	function treeService($http, $q, Tree, ADDRESS) {
 
         var service = {
             getTree : getTree
@@ -17,7 +17,7 @@
 		return service;
 
 		function getTree(){
-			var url = 'http://localhost:8081/dialog/repository/all';
+			var url = ADDRESS+'FrontTEST/getTree';
 
 			return $http.get(url).then(function(response) {
 					if(typeof response.data[0] === 'object') {

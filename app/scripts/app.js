@@ -12,4 +12,4 @@ angular
 
 
   ]
-);
+).constant('ADDRESS','http://localhost:8081/');

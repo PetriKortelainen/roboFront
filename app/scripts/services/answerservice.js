@@ -5,10 +5,10 @@
 		.module('robottiFrontApp')
 		.service('answerService', answerService);
 
-    answerService.$inject = ['$http'];
+    answerService.$inject = ['$http', 'ADDRESS','Answer'];
 
 	/* @ngInject */
-	function answerService($http) {
+	function answerService($http, ADDRESS, Answer) {
         var service = {
             postAnswer : postAnswer
         };
@@ -16,19 +16,20 @@
 		return service;
 
 		function postAnswer(answer){
+			console.log(answer.toBackEnd());
 			$http({
-				url: 'http://localhost:8081/',
+				url: ADDRESS+'FrontTEST/postClick',
 				method : 'POST',
-				data: answer,
+				data: answer.toBackEnd(),
 				headers : {
 					'Content-Type': 'application/json',
-
 				}
 			}).then(function(response){
-
-			}).catch(function(fallback){
-
-			})
+				console.log(response);
+			}, function(response){
+				console.log("Error");
+				console.log(response);
+			});
 		}
 	}
 })();
