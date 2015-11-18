@@ -7,9 +7,7 @@
  * Main module of the application.
  */
 angular
-  .module('robottiFrontApp', [
-          'ngDialog' //external dependencies here
+	.module('robottiFrontApp', [
+		'ngDialog' //external dependencies here
 
-
-  ]
-).constant('ADDRESS','http://localhost:8081/');
+	]).constant('ADDRESS', 'http://localhost:8081/');

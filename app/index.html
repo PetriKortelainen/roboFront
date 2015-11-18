@@ -29,54 +29,61 @@
       z-index: 1;
     }
   </style>
-  <!-- / -->
+
 </head>
 
 <body>
 
-  <div id="sonera">
+  <!-- <div id="sonera">
     <iframe width="100%" height="100%" frameborder="0" src="http://www.sonera.fi/yrityksille/pienet"></iframe>
-  </div>
+  </div> -->
 
-<div ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
-    <div class="container" ng-init="startAni2 = false;">
-          <div class="box-base box2" ng-class="{'move-me': startAni2}">
+	<div ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
+		<div class="container" ng-init="startAni2 = false;">
+			<div class="box-base box2" ng-class="{'move-me': startAni2}">
 
-        <button class="toggle"
-             ng-click="startAni2 = !startAni2">Myyntirobotti</button>
-             <hr id="chat-stripe">
-             
-        <div>
-        <robo-avatar></robo-avatar>
-          <robo-tree></robo-tree>
-      </div>
-          </div>
-  </div>
-</div>
+				<button class="toggle" ng-click="startAni2 = !startAni2">Myyntirobotti</button>
+				<hr id="chat-stripe">
 
+				<!--ROBOTAVATAR STARTS HERE-->
+				<div id="avatarbackground">
+					<div id="avatarleye">
+					</div>
+					<div id="avatarreye">
+					</div>
+					<div id="avatareyelids">
+					</div>
+					<div id="avataragriculture">
+					</div>
+				</div>
+				<!--ROBOTAVATAR ENDS HERE-->
 
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+				<div>
+					<robo-tree></robo-tree>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/ng-dialog/js/ngDialog.js"></script>
 
-  <!-- TODO BOOTSTRAP THESE-->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/main.js"></script>
+	<!-- TODO BOOTSTRAP THESE-->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/main.js"></script>
 
-  <script src="scripts/factories/question.js"></script>
-  <script src="scripts/factories/answer.js"></script>
-  <script src="scripts/factories/tree.js"></script>
+	<script src="scripts/factories/question.js"></script>
+	<script src="scripts/factories/answer.js"></script>
+	<script src="scripts/factories/tree.js"></script>
 
-  <script src="scripts/services/treeservice.js"></script>
-  <script src="scripts/services/questionservice.js"></script>
-  <script src="scripts/services/answerservice.js"></script>
+	<script src="scripts/services/treeservice.js"></script>
+	<script src="scripts/services/questionservice.js"></script>
+	<script src="scripts/services/answerservice.js"></script>
 
-  <script src="scripts/directives/robo-tree.js"></script>
-  <script src="scripts/directives/robo-question.js"></script>
-  <script src="scripts/directives/robo-avatar.js"></script>
-
+	<script src="scripts/directives/robo-tree.js"></script>
+	<script src="scripts/directives/robo-question.js"></script>
 
 </body>
 

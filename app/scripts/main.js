@@ -19,20 +19,19 @@
 	/* @ngInject */
 	function RobotController($scope, treeService, $log, $rootScope, questionService) {
 
-        $scope.init = function(){
+		$scope.init = function () {
 			treeService.getTree().then(
 				function (data) {
 					questionService.setTree(data);
-					$rootScope.currentQuestion = '1';
 				}
-			).catch(function(fallback) {
+			).catch(function (fallback) {
 				$log.error('Error while getting tree');
 				$scope.$emit('DATA-ERROR');
 			});
-        };
-		$scope.$on('DATA-ERROR', function(){
-			$rootScope.dataError=true;
+		};
+		$scope.$on('DATA-ERROR', function () {
+			$rootScope.dataError = true;
 		});
-        $scope.init();
+		$scope.init();
 	}
 })();
