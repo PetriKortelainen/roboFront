@@ -22,9 +22,7 @@ angular
       New Dialog - posttree.html
       */
       $scope.sendData = function() {
-        var tmp = angular.toJson($scope.data);
-        console.log('tmp: ' + tmp);
-        var dataObj = tmp.substring(1, tmp.length-1);
+        var dataObj = angular.toJson($scope.data).slice(1, -1);
         $http.post('http://localhost:8081/manage-api/post/', dataObj);
         console.log('sent: ' + dataObj);
       };
