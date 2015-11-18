@@ -1,3 +1,12 @@
+/**
+ * @ngdoc overview
+ * @name New Dialog Controller
+ * @description
+ * #
+ *
+ * Controller for newdialog.html
+ */
+
 (function () {
 'use strict';
 
@@ -10,7 +19,7 @@ angular
         controller: 'OverviewCtrl'
       })
       .when('/newtree', {
-        templateUrl: 'views/posttree.html',
+        templateUrl: 'views/newdialog.html',
         controller: 'PostCtrl'
       })
       .otherwise({
@@ -18,9 +27,7 @@ angular
       });
   })
   .controller('PostCtrl', ['$scope', '$http', function($scope, $http) {
-      /*
-      New Dialog - posttree.html
-      */
+
       $scope.sendData = function() {
         var dataObj = angular.toJson($scope.data).slice(1, -1);
         $http.post('http://localhost:8081/manage-api/post/', dataObj);
