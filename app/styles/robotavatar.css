@@ -52,18 +52,23 @@
 
 #avatareyelids{
    width: 30px;
-   height: 10px;
+   height: 9px;
    background: #8cc961; 
    position: relative;
    top: 26%;
    left: 15%;
-   -webkit-animation-iteration-count: infinite;
-   -webkit-animation-name: blink;
-   -webkit-animation-duration: 5s; 
-   -webkit-animation-delay: 1s;
+   -webkit-animation: blink 5s infinite;
+   animation: blink 5s infinite;
 }
 
 @-webkit-keyframes blink {
+    0%   {top: 27%;}
+    3%   {top: 50%;}
+    8%   {top: 26%;}
+    100% {top: 27%;}
+}
+
+@keyframes blink {
     0%   {top: 27%;}
     3%   {top: 50%;}
     8%   {top: 26%;}
