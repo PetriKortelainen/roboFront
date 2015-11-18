@@ -1,3 +1,12 @@
+/**
+ * @ngdoc overview
+ * @name Side Nav Controller
+ * @description
+ * #
+ *
+ * Controls the side navigation in management.html
+ */
+
 (function () {
     'use strict';
 
