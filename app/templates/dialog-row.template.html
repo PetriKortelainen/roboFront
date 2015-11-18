@@ -1,6 +1,6 @@
 <td class="vert-align">{{ row.dialogName }}</td>
 <td class="vert-align">{{ row.enabled }}</td>
-<td class="vert-align"><label class="switch"><input ng-model="row.enabled" type="checkbox"><i></i></label></td>
+<td class="vert-align"><label class="switch"><input ng-model="row.enabled" type="checkbox" ng-change="changeEnabled(this)"><i></i></label></td>
 <td class="vert-align">
   <button class="btn btn-default conf-btn">
     <span class="glyphicon glyphicon-trash"></span>
