@@ -1,13 +1,8 @@
-<p>{{question.text}}</p>
-<div ng-if="question.questionId == '1'">
-    <div ng-repeat="answer in question.answerOptions">
-        <button ng-click="openQuestionForm(); answerQuestion(answer)">{{answer.text}}</button>
-    </div>
-</div>
 
-<div ng-if="question.answerType == 'choice' && question.questionId != '1'">
+{{question.text}}
+<div ng-if="question.answerType == 'choice'">
     <div ng-repeat="answer in question.answerOptions">
-        <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
+        <button ng-click="answerQuestion(answer); openQuestionForm();">{{answer.text}}</button>
     </div>
 </div>
 

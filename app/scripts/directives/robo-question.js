@@ -13,12 +13,15 @@
 			scope: {},
 			templateUrl: 'views/robo-question.template.html',
 			controller: function($scope, $element, $attrs) {
+
+				$scope.formOpen = false;
+
 				if(typeof questionService.tree==='object'){
 					$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
 				} else {
 					$timeout(function () {
 						$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
-					}, 1000);
+					}, 2000);
 				}
 
 
@@ -34,32 +37,35 @@
 				}
 
 				$scope.openQuestionForm = function() {
-					ngDialog.openConfirm({
-						template: 'views/robo-question.template.html',
-						scope: $scope
+					if(!$scope.formOpen){
+						$scope.formOpen = true;
+						ngDialog.openConfirm({
+							template: 'views/robo-question.template.html',
+							scope: $scope
 
-					}).then(
-						function(value) {
-							//You need to implement the saveForm() method which should return a promise object
-							$scope.saveForm().then(
-								function(success) {
-									ngDialog.open({template: '<div class="ngdialog-message"> \
-									  Tallennus onnistui.</div>',
-										plain: 'true'
-									});
-								},
-								function(error) {
-									ngDialog.open({template: '<div class="ngdialog-message"> \
-									  Tallennuksessa on tapahtunut virhe.</div>',
-										plain: 'true'
-									});
-								}
-							);
-						},
-						function(value) {
-							//Cancel or do nothing
-						}
-					);
+						}).then(
+							function(value) {
+								//You need to implement the saveForm() method which should return a promise object
+								$scope.saveForm().then(
+									function(success) {
+										ngDialog.open({template: '<div class="ngdialog-message"> \
+										  Tallennus onnistui.</div>',
+											plain: 'true'
+										});
+									},
+									function(error) {
+										ngDialog.open({template: '<div class="ngdialog-message"> \
+										  Tallennuksessa on tapahtunut virhe.</div>',
+											plain: 'true'
+										});
+									}
+								);
+							},
+							function(value) {
+								//Cancel or do nothing
+							}
+						);
+					}
 				};
 			}
 
