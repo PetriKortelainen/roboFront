@@ -60,7 +60,7 @@
    -webkit-animation-iteration-count: infinite;
    -webkit-animation-name: blink;
    -webkit-animation-duration: 5s; 
-   -webkit-animation-delay: 5s;
+   -webkit-animation-delay: 1s;
 }
 
 @-webkit-keyframes blink {
