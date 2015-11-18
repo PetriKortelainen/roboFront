@@ -5,30 +5,32 @@
 		.module('robottiFrontApp')
 		.service('answerService', answerService);
 
-    answerService.$inject = ['$http', 'ADDRESS','Answer'];
+	answerService.$inject = ['$http', 'ADDRESS', 'Answer'];
 
 	/* @ngInject */
 	function answerService($http, ADDRESS, Answer) {
-        var service = {
-            postAnswer : postAnswer
-        };
+		var sessionId;
+		var service = {
+			postAnswer: postAnswer
+		};
 
 		return service;
 
-		function postAnswer(answer){
-			console.log(answer.toBackEnd());
+		function postAnswer(answer) {
+			if(sessionId){
+				answer.setSessionId(sessionId);
+			}
 			$http({
-				url: ADDRESS+'FrontTEST/postClick',
-				method : 'POST',
+				url: ADDRESS + 'Front/postClick',
+				method: 'POST',
 				data: answer.toBackEnd(),
-				headers : {
+				headers: {
 					'Content-Type': 'application/json',
 				}
-			}).then(function(response){
-				console.log(response);
-			}, function(response){
+			}).then(function (response) {
+				sessionId = response.data.session_id;
+			}, function (response) {
 				console.log("Error");
-				console.log(response);
 			});
 		}
 	}

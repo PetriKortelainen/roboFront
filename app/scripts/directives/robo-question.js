@@ -23,10 +23,9 @@
 
 
 				$scope.answerQuestion = function(answer) {
-					answerService.postAnswer(answer);
 					$rootScope.currentQuestion = answer.nextQuestionId;
+					answerService.postAnswer(answer);
 					$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
-
 					if($scope.question){
 						if($scope.question.answer_type == 'redirect') {
 							console.log("REDIRECT HERE")

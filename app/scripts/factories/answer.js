@@ -1,4 +1,4 @@
-(function () {
+(function() {
 	'use strict';
 
 	angular
@@ -7,21 +7,23 @@
 
 	/* @ngInject */
 	function Answer() {
-		var Answer = function (data) {
+		var Answer = function(data) {
 
 			angular.extend(this, {
 				answerOptionId: 0,
-                text:'',
+				text: '',
 				orderIndex: 0,
 				nextQuestionId: 0,
+				session_id: null,
 
 				toJson: toJson,
-				toBackEnd: toBackEnd
+				toBackEnd: toBackEnd,
+				setSessionId : setSessionId
 
 			});
 			angular.extend(this, data);
 
-			if(data){
+			if (data) {
 				delete this.givenAnswers;
 			}
 
@@ -34,13 +36,19 @@
 			return data;
 		}
 
-		function toBackEnd(){
+		function toBackEnd() {
 			var data = {};
 			delete this.nextQuestionId;
 			data.answer_option_id = this.answerOptionId;
-			data.sessionId = "";
+			data.session_id = this.session_id;
 			data = angular.toJson(data);
+			console.log(data);
 			return data;
 		}
+
+		function setSessionId(id){
+			this.session_id = id;
+		}
+
 	}
 })();
