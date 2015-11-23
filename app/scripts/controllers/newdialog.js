@@ -16,7 +16,6 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/overview.html',
-        controller: 'OverviewCtrl'
       })
       .when('/newtree', {
         templateUrl: 'views/newdialog.html',

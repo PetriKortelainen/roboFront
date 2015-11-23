@@ -1,0 +1,15 @@
+<div class="table-responsive">
+<table class="table table-striped" ng-model="dialogs">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Visibility</th>
+        <th>Activate</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in dialogs" ng-include="'templates/dialog-row.template.html'"></tr>
+    </tbody>
+  </table>
+</div>

@@ -1,22 +1,26 @@
 /**
  * @ngdoc overview
- * @name Overview Controller
+ * @name Overview Directive
  * @description
  * #
  *
- * Controller for overview.html
+ * Creates a model of all dialogs and draws it to the DOM.
  */
 
-(function () {
-  'use strict';
+(function() {
+    'use strict';
 
-  angular
-    .module('robottiFrontApp')
-    .controller('OverviewCtrl', OverviewCtrl);
+    angular
+        .module('robottiFrontApp')
+        .directive('confOverview', confOverview);
 
-    OverviewCtrl.$inject = ['$scope',  '$http'];
+    confOverview.$inject = ['$rootScope', '$http'];
 
-    function OverviewCtrl($scope, $http) {
+    function confOverview() {
+        var directive = {
+            restrict: 'E',
+            templateUrl: 'templates/conf-overview.template.html',
+            controller: function($scope, $http) {
       // For production replace the url below with: /manage-api/get-dialogs/
       // For dev with backend(cors browser plugin needed): http://localhost:8081/manage-api/get-dialogs/
       // For dev without backend: scripts/testdata/get-dialogs.json
@@ -31,7 +35,7 @@
       $scope.visibilityRate = function() {
         var enabledDialogs = 0;
         angular.forEach($scope.dialogs, function(row){
-          // if row is enabled add 1 else 0
+          // If row is enabled add 1 else 0
           enabledDialogs += row.enabled ? 1 : 0;
         });
         var rate = (100/enabledDialogs).toFixed(0) + ' %';
@@ -46,5 +50,8 @@
             console.log('success: ' + response);
           });
       };
+            }
+        };
+        return directive;
     }
-}());
+})();
