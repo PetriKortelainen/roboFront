@@ -313,7 +313,12 @@ module.exports = function(grunt) {
                     'angular-ui-tree/dist/angular-ui-tree.js':'angular-ui-tree/dist/angular-ui-tree.min.js',
                     'ng-dialog/js/ngDialog.js':'ng-dialog/js/ngDialog.min.js',
                     'toastr/toastr.js':'toastr/toastr.min.js',
-                    'toastr/toastr.css':'toastr/toastr.min.css'
+                    'toastr/toastr.css':'toastr/toastr.min.css',
+                    'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf':'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf',
+                    'bootstrap/dist/fonts/glyphicons-halflings-regular.woff':'bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
+                    'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2':'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2',
+                    'bootstrap/dist/fonts/glyphicons-halflings-regular.eot':'bootstrap/dist/fonts/glyphicons-halflings-regular.eot',
+                    'bootstrap/dist/fonts/glyphicons-halflings-regular.svg':'bootstrap/dist/fonts/glyphicons-halflings-regular.svg'
 				}
 			}
 		},
