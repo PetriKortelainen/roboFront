@@ -309,7 +309,9 @@ module.exports = function(grunt) {
 					'angular/angular.js': 'angular/angular.min.js',
                     'bootstrap/dist/js/bootstrap.js':'bootstrap/dist/js/bootstrap.min.js',
                     'angular-route/angular-route.js':'angular-route/angular-route.min.js',
-                    'angular-ui-tree/dist/angular-ui-tree.js':'angular-ui-tree/dist/angular-ui-tree.min.js'
+                    'angular-ui-tree/dist/angular-ui-tree.js':'angular-ui-tree/dist/angular-ui-tree.min.js',
+                    'ng-dialog/js/ngDialog.js':'ng-dialog/js/ngDialog.min.js',
+                    'toastr/toastr.js':'toastr/toastr.min.js'
 				}
 			}
 		},
