@@ -29,7 +29,7 @@ angular
 
       $scope.sendData = function() {
         var dataObj = angular.toJson($scope.data).slice(1, -1);
-        $http.post('http://localhost:8081/manage-api/post/', dataObj)
+        $http.post('http://proto294.haaga-helia.fi:8081/manage-api/post/', dataObj)
           .success(function(){
             console.log('sent: ' + dataObj);
             toastr.success('Dialog created succesfully!');
