@@ -15,7 +15,8 @@
 				name: '',
 				enabled: null,
 				created: 0,
-				questions: null
+				questions: null,
+				firstQuestionId: null
 
 				//declare public functions here
 
@@ -32,7 +33,7 @@
 						entries.push(entry);
 					});
 					this.questions = entries;
-					$rootScope.currentQuestion = Math.min.apply(Math,ids);
+					$rootScope.currentQuestion = this.firstQuestionId;
 				}
 			}
 
