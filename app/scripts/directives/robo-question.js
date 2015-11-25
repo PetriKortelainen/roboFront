@@ -38,9 +38,10 @@
 
 				$scope.openQuestionForm = function() {
 					if(!$scope.formOpen){
+						$scope.startAni = false;
 						$scope.formOpen = true;
 						ngDialog.openConfirm({
-							template: 'views/robo-question.template.html',
+							template: 'views/robo-dialog.template.html',
 							scope: $scope
 
 						}).then(

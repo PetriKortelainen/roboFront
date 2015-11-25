@@ -39,19 +39,7 @@
   </div> -->
 
 	<div ng-app="robottiFrontApp" id="robot" ng-controller="RobotController">
-		<div class="container" ng-init="startAni2 = false;">
-			<div class="box-base box2" ng-class="{'move-me': startAni2}">
-
-				<button class="toggle" ng-click="startAni2 = !startAni2">Myyntirobotti</button>
-				<hr id="chat-stripe">
-
-                <robo-avatar></robo-avatar>
-
-				<div>
-					<robo-tree></robo-tree>
-				</div>
-			</div>
-		</div>
+        <robo-question></robo-question>
 	</div>
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
