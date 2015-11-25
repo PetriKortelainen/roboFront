@@ -14,13 +14,13 @@
         .module('robottiFrontApp')
         .directive('confOverview', confOverview);
 
-    confOverview.$inject = ['$rootScope', '$http'];
+    confOverview.$inject = ['$rootScope', '$http', '$route'];
 
     function confOverview() {
         var directive = {
             restrict: 'E',
             templateUrl: 'templates/conf-overview.template.html',
-            controller: function($scope, $http) {
+            controller: function($scope, $http, $route) {
       // For production replace the url below with: /manage-api/get-dialogs/
       // For dev with backend(cors browser plugin needed): http://localhost:8081/manage-api/get-dialogs/
       // For dev without backend: scripts/testdata/get-dialogs.json
@@ -50,6 +50,20 @@
             console.log('success: ' + response);
           });
       };
+
+      $scope.removeDialog = function($scope) {
+        var gUrl = 'http://localhost:8081/manage-api/delete/' + $scope.row.id;
+        $http.get(gUrl)
+          .success(function(response) {
+            console.log('success: ' + response);
+            $route.reload();
+            toastr.success($scope.row.dialogName + ' was removed succesfully!');
+          })
+          .error(function(response){
+            console.log('error: ' +response);
+          });
+      };
+
             }
         };
         return directive;
