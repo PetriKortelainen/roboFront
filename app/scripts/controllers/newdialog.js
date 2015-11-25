@@ -29,9 +29,17 @@ angular
 
       $scope.sendData = function() {
         var dataObj = angular.toJson($scope.data).slice(1, -1);
-        $http.post('http://localhost:8081/manage-api/post/', dataObj);
-        console.log('sent: ' + dataObj);
-        toastr.success('Dialog created succesfully!');
+        $http.post('http://localhost:8081/manage-api/post/', dataObj)
+          .success(function(){
+            console.log('sent: ' + dataObj);
+            toastr.success('Dialog created succesfully!');
+            $scope.data = [{
+              'id': '1',
+              'dialogName' : '',
+              'questionText' : '',
+              'nodes': []
+            }];
+          });
       };
 
       $scope.remove = function($scope) {
