@@ -1,30 +1,34 @@
 #!/bin/sh
 user=$1
-
 server="proto294.haaga-helia.fi"
 target="/home/robofront/app/"
 
-#Asenna
-echo "BUILD"
-grunt build
-#Tarkista
+if [ ! -z "$user" ]
+then
+    #Asenna
+    echo "BUILD"
+    grunt build
+    #Tarkista
 
 
-#Paketoi
-echo "CREATE PACKET"
-tar -cf dist.tar.gz ./dist/*
+    #Paketoi
+    echo "CREATE PACKET"
+    tar -cf dist.tar.gz ./dist/*
 
-#Siirrä
-echo "MOVE TO SERVER: "$server
-scp dist.tar.gz $user@$server:/home/$user/
-ssh -l -t $user@$server 'sudo rm -rf '$target'*;
-sudo mv /home/'$user'/dist.tar.gz '$target';
-sudo tar -xf '$target'dist.tar.gz -C '$target';
-sudo chown -R robofront:robofront '$target'*;
-sudo mv '$target'dist/* '$target';
-sudo rm -rf '$target'dist*;'
+    #Siirrä
+    echo "MOVE TO SERVER: "$server
+    scp dist.tar.gz $user@$server:/home/$user/
+    ssh -l -t $user@$server 'sudo rm -rf '$target'*;
+    sudo mv /home/'$user'/dist.tar.gz '$target';
+    sudo tar -xf '$target'dist.tar.gz -C '$target';
+    sudo chown -R robofront:robofront '$target'*;
+    sudo mv '$target'dist/* '$target';
+    sudo rm -rf '$target'dist*;'
 
-#Cleanup
-echo "CLEANUP"
-rm -rf ./dist.tar.gz
-rm -rf ./dist/
+    #Cleanup
+    echo "CLEANUP"
+    rm -rf ./dist.tar.gz
+    rm -rf ./dist/
+else
+    echo "give username as parameter"
+fi
