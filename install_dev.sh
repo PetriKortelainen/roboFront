@@ -1,17 +1,30 @@
-#!/bin/bash
+#!/bin/sh
+user=$1
 
-user=""
-password=""
-url="proto294.haaga-helia.fi"
-target="/home/robo"
-current=$(pwd)
+server="proto294.haaga-helia.fi"
+target="/home/robofront/app/"
 
 #Asenna
+echo "BUILD"
 grunt build
 #Tarkista
 
 
 #Paketoi
-tar -cZf $current/dist/ 
+echo "CREATE PACKET"
+tar -cf dist.tar.gz ./dist/*
 
 #Siirrä
+echo "MOVE TO SERVER: "$server
+scp dist.tar.gz $user@$server:/home/$user/
+ssh -l -t $user@$server 'sudo rm -rf '$target'*;
+sudo mv /home/'$user'/dist.tar.gz '$target';
+sudo tar -xf '$target'dist.tar.gz -C '$target';
+sudo chown -R robofront:robofront '$target'*;
+sudo mv '$target'dist/* '$target';
+sudo rm -rf '$target'dist*;'
+
+#Cleanup
+echo "CLEANUP"
+rm -rf ./dist.tar.gz
+rm -rf ./dist/
