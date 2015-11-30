@@ -44,7 +44,7 @@
 
       // Change the enabled status of a dialog (will the dialog be visible to the end user)
       $scope.changeEnabled = function($scope) {
-        var gUrl = 'http://proto294.haaga-helia.fi:8081/manage-api/activate/' + $scope.row.id;
+        var gUrl = '/manage-api/activate/' + $scope.row.id;
         $http.get(gUrl)
           .success(function(response) {
             console.log('success: ' + response);
@@ -52,7 +52,7 @@
       };
 
       $scope.removeDialog = function($scope) {
-        var gUrl = 'http://proto294.haaga-helia.fi:8081/manage-api/delete/' + $scope.row.id;
+        var gUrl = '/manage-api/delete/' + $scope.row.id;
         $http.get(gUrl)
           .success(function(response) {
             console.log('success: ' + response);
