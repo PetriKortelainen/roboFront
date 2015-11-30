@@ -3,8 +3,11 @@
 
         <button class="toggle" ng-click="startAni = !startAni">Myyntirobotti</button>
         <hr id="chat-stripe">
+        <robo-avatar></robo-avatar>
         <div ng-if="!formOpen">
-            {{question.text}}
+        	<div id="talkbubble">
+            	{{question.text}}
+            </div>
             <div ng-if="question.answerType == 'choice'">
                 <div ng-repeat="answer in question.answerOptions">
                     <button ng-click="answerQuestion(answer); openQuestionForm();">{{answer.text}}</button>
