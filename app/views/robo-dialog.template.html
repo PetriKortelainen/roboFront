@@ -1,4 +1,7 @@
-{{question.text}}
+<robo-avatar></robo-avatar>
+<div id="talkbubble">
+	{{question.text}}
+</div>
 <div ng-if="question.answerType == 'choice'">
     <div ng-repeat="answer in question.answerOptions">
         <button ng-click="answerQuestion(answer); openQuestionForm();">{{answer.text}}</button>
