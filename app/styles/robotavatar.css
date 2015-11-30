@@ -62,17 +62,17 @@
 }
 
 @-webkit-keyframes blink {
-    0%   {top: 27%;}
+    0%   {top: 29%;}
     3%   {top: 50%;}
-    8%   {top: 26%;}
-    100% {top: 27%;}
+    8%   {top: 28%;}
+    100% {top: 29%;}
 }
 
 @keyframes blink {
-    0%   {top: 27%;}
+    0%   {top: 29%;}
     3%   {top: 50%;}
-    8%   {top: 26%;}
-    100% {top: 27%;}
+    8%   {top: 28%;}
+    100% {top: 29%;}
 }
 
 #avataragriculture{
@@ -87,7 +87,6 @@
    -webkit-animation-name: hat;
    -webkit-animation-duration: 1s; 
    -webkit-animation-timing-function: ease-in-out;
-
 }
 
 #avataragriculture:before{
