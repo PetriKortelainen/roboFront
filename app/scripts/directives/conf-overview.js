@@ -24,7 +24,7 @@
       // For production replace the url below with: /manage-api/get-dialogs/
       // For dev with backend(cors browser plugin needed): http://localhost:8081/manage-api/get-dialogs/
       // For dev without backend: scripts/testdata/get-dialogs.json
-      var url = 'http://proto294.haaga-helia.fi:8081/manage-api/get-dialogs/';
+      var url = '/manage-api/get-dialogs/';
       // Get all dialogs from the DB and bind them to the scope, which is then used to print them out in overview.html
       $http.get(url)
         .success(function(response) {
