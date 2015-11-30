@@ -24,11 +24,15 @@
       // For production replace the url below with: /manage-api/get-dialogs/
       // For dev with backend(cors browser plugin needed): http://localhost:8081/manage-api/get-dialogs/
       // For dev without backend: scripts/testdata/get-dialogs.json
-      var url = '/manage-api/get-dialogs/';
+      var url = 'http://proto294.haaga-helia.fi:8081/manage-api/get-dialogs/';
       // Get all dialogs from the DB and bind them to the scope, which is then used to print them out in overview.html
       $http.get(url)
         .success(function(response) {
           $scope.dialogs = response;
+        })
+        .error(function(response){
+          console.log('error: ' +response);
+          toastr.error('' + response, 'An error occured!');
         });
 
       // Loop through scope, sum up active dialogs and calculates their visibility rate
@@ -44,15 +48,21 @@
 
       // Change the enabled status of a dialog (will the dialog be visible to the end user)
       $scope.changeEnabled = function($scope) {
-        var gUrl = '/manage-api/activate/' + $scope.row.id;
+        var gUrl = 'http://proto294.haaga-helia.fi:8081/manage-api/activate/' + $scope.row.id;
         $http.get(gUrl)
           .success(function(response) {
+            toastr.success($scope.row.dialogName + '\'s visibility changed succesfully!');
             console.log('success: ' + response);
+          })
+          .error(function(response){
+            $route.reload();
+            console.log('error: ' +response);
+            toastr.error('' + response, 'An error occured!');
           });
       };
 
       $scope.removeDialog = function($scope) {
-        var gUrl = '/manage-api/delete/' + $scope.row.id;
+        var gUrl = 'http://proto294.haaga-helia.fi:8081/manage-api/delete/' + $scope.row.id;
         $http.get(gUrl)
           .success(function(response) {
             console.log('success: ' + response);
@@ -61,6 +71,7 @@
           })
           .error(function(response){
             console.log('error: ' +response);
+            toastr.error('' + response, 'An error occured!');
           });
       };
 
