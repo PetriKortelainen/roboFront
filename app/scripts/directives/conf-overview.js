@@ -62,6 +62,7 @@
       };
 
       $scope.removeDialog = function($scope) {
+        if (!$scope.row.enabled) {
         var gUrl = 'api/manage-api/delete/' + $scope.row.id;
         $http.get(gUrl)
           .success(function(response) {
@@ -73,6 +74,10 @@
             console.log('error: ' +response);
             toastr.error('' + response, 'An error occured!');
           });
+        }
+        else {
+           toastr.error('Cannot remove an active dialog!', 'An error occured!');
+        } 
       };
 
             }
