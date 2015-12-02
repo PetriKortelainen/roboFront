@@ -24,7 +24,7 @@
       // For production replace the url below with: /manage-api/get-dialogs/
       // For dev with backend(cors browser plugin needed): http://localhost:8081/manage-api/get-dialogs/
       // For dev without backend: scripts/testdata/get-dialogs.json
-      var url = 'api/manage-api/get-dialogs/';
+      var url = '/api/manage-api/get-dialogs/';
       // Get all dialogs from the DB and bind them to the scope, which is then used to print them out in overview.html
       $http.get(url)
         .success(function(response) {
@@ -48,7 +48,7 @@
 
       // Change the enabled status of a dialog (will the dialog be visible to the end user)
       $scope.changeEnabled = function($scope) {
-        var gUrl = 'api/manage-api/activate/' + $scope.row.id;
+        var gUrl = '/api/manage-api/activate/' + $scope.row.id;
         $http.get(gUrl)
           .success(function(response) {
             toastr.success($scope.row.dialogName + '\'s visibility changed succesfully!');
@@ -63,7 +63,7 @@
 
       $scope.removeDialog = function($scope) {
         if (!$scope.row.enabled) {
-        var gUrl = 'api/manage-api/delete/' + $scope.row.id;
+        var gUrl = '/api/manage-api/delete/' + $scope.row.id;
         $http.get(gUrl)
           .success(function(response) {
             console.log('success: ' + response);
