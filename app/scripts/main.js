@@ -18,11 +18,11 @@
 
 	/* @ngInject */
 	function RobotController($scope, treeService, $log, $rootScope, questionService) {
-
 		$scope.init = function () {
 			treeService.getTree().then(
 				function (data) {
 					questionService.setTree(data);
+					$rootScope.question = questionService.getQuestionById($rootScope.currentQuestion);
 				}
 			).catch(function (fallback) {
 				$log.error('Error while getting tree');

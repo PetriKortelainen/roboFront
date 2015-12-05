@@ -8,8 +8,6 @@ then
     #Asenna
     echo "BUILD"
     grunt build
-    #Tarkista
-
 
     #Paketoi
     echo "CREATE PACKET"

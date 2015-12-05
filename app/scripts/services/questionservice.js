@@ -21,7 +21,7 @@
 			this.tree = tree;
 		}
 
-		function getQuestionById(id, tree) {
+		function getQuestionById(id) {
 			var question;
 			angular.forEach(this.tree.questions, function (value) {
 				if (value.questionId == id) {

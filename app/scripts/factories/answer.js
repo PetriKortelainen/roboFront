@@ -11,7 +11,7 @@
 
 			angular.extend(this, {
 				answerOptionId: 0,
-				text: '',
+				text: "",
 				orderIndex: 0,
 				nextQuestionId: 0,
 				session_id: null,
