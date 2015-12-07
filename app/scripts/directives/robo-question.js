@@ -57,7 +57,7 @@
 						$scope.formOpen = false;
 						ngDialog.closeAll();
 					}, 2000);
-				}
+				};
 
 			}
 
