@@ -41,7 +41,9 @@
 			delete this.nextQuestionId;
 			data.answer_option_id = this.answerOptionId;
 			data.session_id = this.session_id;
-			//if textfield contains data, it's considered to be closing
+			if(this.textfield){
+				data.textfieldAnswer = this.textfield;
+			}
 			data = angular.toJson(data);
 			return data;
 		}

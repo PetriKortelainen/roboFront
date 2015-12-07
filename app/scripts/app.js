@@ -12,4 +12,4 @@ angular
 	.module('robottiFrontApp', [
 		'ngDialog' //external dependencies here
 
-	]).constant('ADDRESS', prod);
+	]).constant('ADDRESS', dev);

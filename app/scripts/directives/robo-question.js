@@ -5,9 +5,9 @@
 		.module('robottiFrontApp')
 		.directive('roboQuestion', roboQuestion);
 
-	roboQuestion.$inject = ['$rootScope', 'questionService', 'ngDialog', 'answerService','$timeout'];
+	roboQuestion.$inject = ['$rootScope', 'questionService', 'ngDialog', 'answerService', 'Answer', '$timeout'];
 
-	function roboQuestion($rootScope, questionService, ngDialog, answerService, $timeout) {
+	function roboQuestion($rootScope, questionService, ngDialog, answerService, Answer, $timeout) {
 		var directive = {
 			restrict: 'E',
 			scope: {},
@@ -15,6 +15,7 @@
 			controller: function($scope, $element, $attrs) {
 
 				$scope.formOpen = false;
+				var openModal = false;
 
 				$rootScope.$watch('question', function(val){
 					$scope.question = val;
@@ -24,24 +25,40 @@
 					$rootScope.currentQuestion = answer.nextQuestionId;
 					answerService.postAnswer(answer);
 					$scope.question = questionService.getQuestionById($rootScope.currentQuestion);
-					if($scope.question){
-						if($scope.question.answer_type == 'redirect') {
-							console.log("REDIRECT HERE")
-						}
+					if($rootScope.currentQuestion){
+						openModal = true;
 					}
 				}
 
 				$scope.openQuestionForm = function() {
 					if(!$scope.formOpen){
-						$scope.startAni = false;
-						$scope.formOpen = true;
-						ngDialog.openConfirm({
-							template: 'views/robo-dialog.template.html',
-							scope: $scope
+						if(openModal){
+							$scope.startAni = false;
+							$scope.formOpen = true;
+							ngDialog.openConfirm({
+								template: 'views/robo-dialog.template.html',
+								scope: $scope
+							});
+						} else {
+							$scope.startAni = false;
+							$scope.formOpen = false;
+						}
 
-						});
 					}
 				};
+
+				$scope.submitContactInfo = function(contactInfo){
+					var answer = new Answer();
+					answer.textfield = contactInfo;
+					answerService.postAnswer(answer);
+					$scope.goodBye = true;
+					$timeout(function () {
+						$scope.startAni = false;
+						$scope.formOpen = false;
+						ngDialog.closeAll();
+					}, 2000);
+				}
+
 			}
 
 		};

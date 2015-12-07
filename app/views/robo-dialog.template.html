@@ -1,22 +1,22 @@
 <robo-avatar></robo-avatar>
-<div id="talkbubble">
-	{{question.text}}
-</div>
+
 <div ng-if="question.answerType == 'choice'">
+	<div id="talkbubble">
+		{{question.text}}
+	</div>
     <div ng-repeat="answer in question.answerOptions">
         <button ng-click="answerQuestion(answer); openQuestionForm();">{{answer.text}}</button>
     </div>
 </div>
 
-<div ng-if="question.answerType == 'checkbox'">
-    <div ng-repeat="answer in question.answerOptions">
-        <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
-    </div>
-</div>
 
-<div ng-if="question.answerType == 'form'">
-    <p>Puhelin tai sähköposti</p><input type="text" ng-model="contactInfo"></input>
-    <div ng-repeat="answer in question.answerOptions">
-        <button ng-click="answerQuestion(answer)">{{answer.text}}</button>
-    </div>
+<div ng-if="!$root.currentQuestion">
+	<div id="talkbubble">
+		Puhelin tai sähköposti
+	</div>
+	<input type="text" ng-model="contactInfo"></input>
+	<button ng-if="!goodBye" ng-click="submitContactInfo(contactInfo)">Submit</button>
+	<div ng-if="goodBye">
+		Kiitos yhteydenottopyynnöstä. Teihin ollaan yhteydessä 3 arkipäivän sisään.
+	</div>
 </div>
