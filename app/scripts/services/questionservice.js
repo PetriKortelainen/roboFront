@@ -5,10 +5,8 @@
 		.module('robottiFrontApp')
 		.service('questionService', questionService);
 
-	questionService.$inject = ['Tree', '$rootScope', 'Question', '$q'];
-
 	/* @ngInject */
-	function questionService(Tree, $rootScope, Question, $q) {
+	function questionService() {
 		var tree;
 		var service = {
 			getQuestionById: getQuestionById,

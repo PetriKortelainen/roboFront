@@ -1,6 +1,6 @@
 /**
  * @ngdoc overview
- * @name Main (and only) Controller
+ * @name Main Controller
  * @description
  * #
  *

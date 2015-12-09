@@ -1,6 +1,6 @@
 #!/bin/sh
 user=$1
-server="proto294.haaga-helia.fi"
+server="proto460.haaga-helia.fi"
 target="/home/robofront/app/"
 
 if [ ! -z "$user" ]

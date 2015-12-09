@@ -2,9 +2,10 @@
  * @ngdoc overview
  * @name robottiFrontApp
  * @description
- * # robottiFrontApp, bootstraps the application
+ * # Robot application is the front application of Myyntirobotti
+ * # It has 3 parts, Dialog, Management and Configuration
  *
- * Main module of the application.
+ * Main module of the application. This bootstraps the application.
  */
  var dev = "http://localhost:8081/";
  var prod = "api/";

@@ -22,7 +22,6 @@
 			return $http.get(url).then(function (response) {
 				if (typeof response.data[0] === 'object') {
 					var tree = new Tree(response.data[0]);
-					console.log(tree);
 					return tree;
 				} else {
 					return $q.reject(response.data);
